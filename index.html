@@ -1605,6 +1605,185 @@
       color: #071225;
     }
 
+
+    /* v5: 라이트 모드 가독성 / 인터랙션 정리 */
+    .container { width: min(1240px, calc(100% - 32px)); }
+
+    .top-nav {
+      background: rgba(255, 255, 255, 0.96);
+      color: #071225;
+    }
+
+    .primary-btn:hover,
+    .nav-cta:hover,
+    .big-cta:hover,
+    .copy-coupon:hover,
+    .send-cheer:hover {
+      color: #021014;
+    }
+
+    .secondary-btn:hover {
+      color: #ffffff;
+      background: rgba(7, 18, 37, .22);
+      border-color: rgba(255,255,255,.55);
+    }
+
+    .benefit-card:hover,
+    .interactive-card:hover,
+    .simple-schedule-card:hover {
+      color: #071225;
+    }
+
+    .stage-section.victory-stage {
+      border: 2px solid rgba(0, 117, 255, .22);
+      box-shadow: inset 0 0 0 1px rgba(36,245,208,.28), 0 24px 64px rgba(7, 18, 37, .12);
+    }
+
+    .stage-label {
+      color: #021014;
+      background: var(--mint);
+    }
+
+    .interactive-zone {
+      grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+      gap: 28px;
+    }
+
+    .interactive-card {
+      min-height: 520px;
+    }
+
+    .field-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .calc-result {
+      grid-template-columns: 1fr;
+    }
+
+    .cheer-card .game-area {
+      text-align: left;
+    }
+
+    .cheer-options {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .cheer-option {
+      min-height: 112px;
+      padding: 18px 14px;
+      border-radius: 22px;
+      border: 2px solid rgba(7,18,37,.08);
+      background: #ffffff;
+      color: #071225;
+      font: inherit;
+      font-size: 16px;
+      font-weight: 1000;
+      line-height: 1.3;
+      letter-spacing: -0.04em;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(7,18,37,.06);
+      transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease;
+    }
+
+    .cheer-option span {
+      color: #52627a;
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .cheer-option:hover,
+    .cheer-option.is-selected {
+      color: #071225;
+      border-color: var(--pink);
+      box-shadow: 0 16px 32px rgba(255,63,180,.16);
+      transform: translateY(-2px);
+    }
+
+    .selected-cheer {
+      margin-top: 16px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #e8fffb;
+      border: 1px solid rgba(0, 125, 120, .2);
+      color: #007d78;
+      font-weight: 1000;
+      letter-spacing: -0.03em;
+      text-align: center;
+    }
+
+    .send-cheer {
+      width: 100%;
+      margin-top: 14px;
+      min-height: 58px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--mint);
+      color: #021014;
+      font: inherit;
+      font-size: 18px;
+      font-weight: 1000;
+      cursor: pointer;
+      box-shadow: 0 14px 28px rgba(36,245,208,.28);
+      transition: transform .16s ease, box-shadow .16s ease;
+    }
+
+    .send-cheer:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(36,245,208,.38);
+    }
+
+    .simple-schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .simple-schedule-card {
+      padding: 24px;
+      border-radius: 24px;
+      background: #f2f7ff;
+      border: 1px solid rgba(7,18,37,.08);
+      box-shadow: 0 12px 28px rgba(7,18,37,.05);
+    }
+
+    .simple-schedule-card h3 {
+      margin: 6px 0 14px;
+      color: #071225;
+      font-size: 26px;
+      letter-spacing: -0.05em;
+    }
+
+    .simple-schedule-card p {
+      margin: 8px 0;
+      color: #31435f;
+      font-size: 16px;
+      font-weight: 850;
+      line-height: 1.45;
+    }
+
+    .simple-schedule-card strong {
+      color: #071225;
+      font-weight: 1000;
+    }
+
+    @media (max-width: 900px) {
+      .interactive-zone,
+      .field-grid,
+      .cheer-options,
+      .simple-schedule-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .interactive-card {
+        min-height: auto;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1629,7 +1808,9 @@
             </div>
             <img class="hero-banner-copy hero-title-image" src="assets/hero-banner-copy.png" alt="대한민국 파이팅! 사전예약하고 즐기자!" />
             <p class="hero-copy">
-              주문 폭주로 킥오프 놓치지 마세요! 경기 전날 도미노 앱으로 미리 예약하면, 대기 없이 따뜻한 피자가 원하는 시간에 도착합니다. 30% 보너스 할인 혜택까지 먼저 선점하세요.
+              도미노 앱으로 미리 주문하고<br />
+              기다리지 말고 피자를 받아보세요!<br />
+              30% 보너스 할인 혜택까지
             </p>
             <div class="hero-actions">
               <a class="primary-btn" href="#order">주문하러 가기</a>
@@ -1672,15 +1853,15 @@
 
           <div class="benefit-summary">
             <article class="benefit-card" data-stage="30">
-              <h3>[전날 예약] 배달 할인</h3>
+              <h3>🚚 [전날 예약] 배달 할인</h3>
               <div class="discount"><span class="num">30</span><span class="unit">%</span></div>
               <p>6/12, 6/19, 6/25 경기일에 배달받을 피자를 하루 전 도미노 앱으로 예약 주문 시 피자(L) 배달 30% 즉시 할인!</p>
             </article>
 
             <article class="benefit-card" data-stage="40">
-              <h3>[승리 당일] 포장 할인</h3>
+              <h3>🏆 [승리 당일] 포장 할인</h3>
               <div class="discount"><span class="num">40</span><span class="unit">%</span></div>
-              <p>대한민국 대표팀 경기 승리 시, 당일 오후 3시부터 피자(M, L) 포장 40% 보너스 쿠폰이 일괄 자동 지급됩니다!</p>
+              <p>대한민국 대표팀 경기 승리 시, 당일 오후 3시부터 피자(M, L) 포장 40% 쿠폰이 지급되고 당일 바로 사용 가능합니다!</p>
             </article>
           </div>
 
@@ -1730,18 +1911,18 @@
           <section class="stage-section victory-stage" id="benefit2">
             <div class="stage-grid">
               <div>
-                <span class="stage-label">STAGE 02 · 승리의 기쁨을 배로</span>
+                <span class="stage-label">🏆 승리의 기쁨을 배로</span>
                 <h2>대한민국 승리 시<br /><span class="highlight-pink">포장 피자 40%</span> 추가 오픈!</h2>
                 <p class="section-desc">
-                  승리의 열기를 그대로 이어받아 전 국민 피자 파티! 대한민국 대표팀 경기 승리 시 당일 피자(M, L) 방문 포장 40% 파격 할인 쿠폰을 드립니다.
+                  승리의 열기를 그대로 이어받아 전 국민 피자 파티! 대한민국 대표팀 경기 승리 시 당일 바로 사용 가능한 피자(M, L) 방문 포장 40% 할인 쿠폰을 드립니다.
                 </p>
-                <p class="mini-note">※ 승리 쿠폰은 경기 승리 당일 15:00부터 순차적으로 일괄 자동 지급됩니다.</p>
+                <p class="mini-note">※ 승리 쿠폰은 경기 승리 당일 15:00부터 순차적으로 지급되며, 지급 당일 사용 가능합니다.</p>
               </div>
 
               <div class="scoreboard" aria-label="경기 승리 시 쿠폰 지급 안내">
-                <div class="score-row"><strong>6/12 경기 승리 시</strong><span>40% 쿠폰 즉시 발급</span></div>
-                <div class="score-row"><strong>6/19 경기 승리 시</strong><span>40% 쿠폰 즉시 발급</span></div>
-                <div class="score-row"><strong>6/25 경기 승리 시</strong><span>40% 쿠폰 즉시 발급</span></div>
+                <div class="score-row"><strong>6/12 경기 승리 시</strong><span>당일 포장 40%</span></div>
+                <div class="score-row"><strong>6/19 경기 승리 시</strong><span>당일 포장 40%</span></div>
+                <div class="score-row"><strong>6/25 경기 승리 시</strong><span>당일 포장 40%</span></div>
               </div>
             </div>
           </section>
@@ -1766,7 +1947,7 @@
               <ul class="chant-list">
                 <li>사전예약으로 배달 폭주 걱정 없이 안심 수령</li>
                 <li>하루 전 예약만 해도 라지 사이즈 30% 즉시 할인</li>
-                <li>승리하면 다음 날까지 이어지는 포장 40% 앙코르 혜택</li>
+                <li>승리하면 당일 바로 쓰는 포장 40% 쿠폰</li>
               </ul>
             </article>
           </section>
@@ -1795,8 +1976,8 @@
                 <div class="field">
                   <label for="discountType">혜택 선택</label>
                   <select id="discountType">
-                    <option value="0.3">배달 30% 사전예약</option>
-                    <option value="0.4">승리 시 포장 40%</option>
+                    <option value="0.3">🚚 배달 30% 사전예약</option>
+                    <option value="0.4">🏆 승리 시 포장 40%</option>
                   </select>
                 </div>
               </div>
@@ -1808,68 +1989,56 @@
               <p class="mini-note">※ 가격은 대표 피자 L 기준 예시이며, 추가 토핑 금액은 제외됩니다. 실제 주문 전 공식 앱 가격을 확인해주세요.</p>
             </article>
 
-            <article class="interactive-card" id="couponGame">
-              <span class="section-kicker">🎮 응원 게이지 게임</span>
-              <h2>버튼을 눌러<br /><span class="highlight-pink">30% 쿠폰 게이지</span> 채우기!</h2>
-              <p class="section-desc">응원 버튼을 연타해서 게이지를 100%까지 채우면 배달 30% 할인 쿠폰이 등장합니다.</p>
-              <div class="game-area">
-                <button class="tap-button" id="tapButton" type="button">응원<br />누르기!</button>
-                <div class="power-bar" aria-label="쿠폰 게이지">
-                  <div class="power-fill" id="powerFill"></div>
+            <article class="interactive-card cheer-card" id="couponGame">
+              <span class="section-kicker">🇰🇷 국가대표 응원하기</span>
+              <h2>응원 메시지 보내고<br /><span class="highlight-pink">앱 전용 30% 쿠폰</span> 받기!</h2>
+              <p class="section-desc">응원 문구를 하나 선택한 뒤 보내기 버튼을 누르면, 도미노 앱에서 사용할 수 있는 배달 30% 할인 쿠폰이 열립니다.</p>
+              <div class="game-area cheer-area">
+                <div class="cheer-options" role="radiogroup" aria-label="응원 문구 선택">
+                  <button class="cheer-option is-selected" type="button" data-cheer="대한민국 파이팅! 피자 먹고 승리 가자!">대한민국 파이팅!<br /><span>피자 먹고 승리 가자!</span></button>
+                  <button class="cheer-option" type="button" data-cheer="오늘 응원 메뉴는 도미노 피자!">오늘 응원 메뉴는<br /><span>도미노 피자!</span></button>
+                  <button class="cheer-option" type="button" data-cheer="골 넣고 피자 먹자! 승리까지 가자!">골 넣고 피자 먹자!<br /><span>승리까지 가자!</span></button>
                 </div>
-                <div class="game-count" id="gameCount">0 / 12 응원 완료</div>
+                <div class="selected-cheer" id="selectedCheer">대한민국 파이팅! 피자 먹고 승리 가자!</div>
+                <button class="send-cheer" id="sendCheer" type="button">응원 보내고 쿠폰 받기</button>
                 <div class="coupon-result" id="couponResult" aria-live="polite">
-                  <div class="coupon-title">쿠폰 도착!</div>
-                  <p><strong>배달 30% 할인</strong><br />경기 전날 사전예약하고 더 맛있게 응원하자!</p>
+                  <div class="coupon-title">응원 완료! 쿠폰 도착</div>
+                  <p><strong>앱 전용 배달 30% 할인</strong><br />도미노 앱에서 경기 전날 사전예약하고 더 맛있게 응원하세요.</p>
                   <div class="coupon-code" id="couponCode">DOMINO-WC-30</div>
                   <button class="copy-coupon" id="copyCoupon" type="button">쿠폰번호 복사하기</button>
                   <div class="copy-message" id="copyMessage" aria-live="polite"></div>
                 </div>
-                <button class="reset-game" id="resetGame" type="button">다시 채우기</button>
               </div>
             </article>
           </section>
 
           <section class="schedule-section" id="schedule">
-            <span class="section-kicker">📅 전체 경기일정 & 쿠폰 스케줄</span>
-            <h2 class="section-title">언제 예약하고,<br />언제 쿠폰 받는지 한눈에!</h2>
-            <p class="section-desc">경기 전날에는 배달 30% 사전예약, 대한민국 승리 당일에는 포장 40% 쿠폰을 체크하세요.</p>
-            <div class="schedule-table-wrap">
-              <table class="schedule-table">
-                <thead>
-                  <tr>
-                    <th>경기일</th>
-                    <th>전날 사전예약</th>
-                    <th>배달 30% 혜택</th>
-                    <th>승리 시 쿠폰 스케줄</th>
-                    <th>사용 조건</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span class="schedule-badge mint">MATCH 01</span><br /><strong>6/12</strong> 대한민국 경기</td>
-                    <td><strong>6/11</strong> 도미노 앱 예약</td>
-                    <td>6/12에 받을 피자(L) 배달 <strong>30% 할인</strong></td>
-                    <td>승리 시 6/12 <strong>15:00부터</strong> 순차 지급</td>
-                    <td>피자(M/L) 포장 <strong>40% 할인</strong></td>
-                  </tr>
-                  <tr>
-                    <td><span class="schedule-badge mint">MATCH 02</span><br /><strong>6/19</strong> 대한민국 경기</td>
-                    <td><strong>6/18</strong> 도미노 앱 예약</td>
-                    <td>6/19에 받을 피자(L) 배달 <strong>30% 할인</strong></td>
-                    <td>승리 시 6/19 <strong>15:00부터</strong> 순차 지급</td>
-                    <td>피자(M/L) 포장 <strong>40% 할인</strong></td>
-                  </tr>
-                  <tr>
-                    <td><span class="schedule-badge mint">MATCH 03</span><br /><strong>6/25</strong> 대한민국 경기</td>
-                    <td><strong>6/24</strong> 도미노 앱 예약</td>
-                    <td>6/25에 받을 피자(L) 배달 <strong>30% 할인</strong></td>
-                    <td>승리 시 6/25 <strong>15:00부터</strong> 순차 지급</td>
-                    <td>피자(M/L) 포장 <strong>40% 할인</strong></td>
-                  </tr>
-                </tbody>
-              </table>
+            <span class="section-kicker">📅 경기 일정 & 쿠폰 스케줄</span>
+            <h2 class="section-title">예약일과 쿠폰일만<br />빠르게 확인!</h2>
+            <div class="simple-schedule-grid" aria-label="경기 일정과 쿠폰 스케줄">
+              <article class="simple-schedule-card">
+                <span class="schedule-badge mint">MATCH 01</span>
+                <h3>6/12 경기</h3>
+                <p><strong>6/11</strong> 사전예약</p>
+                <p>🚚 배달 30% 적용</p>
+                <p>🏆 승리 당일 15:00 포장 40%</p>
+              </article>
+              <article class="simple-schedule-card">
+                <span class="schedule-badge mint">MATCH 02</span>
+                <h3>6/19 경기</h3>
+                <p><strong>6/18</strong> 사전예약</p>
+                <p>🚚 배달 30% 적용</p>
+                <p>🏆 승리 당일 15:00 포장 40%</p>
+              </article>
+              <article class="simple-schedule-card">
+                <span class="schedule-badge mint">MATCH 03</span>
+                <h3>6/25 경기</h3>
+                <p><strong>6/24</strong> 사전예약</p>
+                <p>🚚 배달 30% 적용</p>
+                <p>🏆 승리 당일 15:00 포장 40%</p>
+              </article>
             </div>
+            <p class="mini-note">※ 포장 40% 쿠폰은 대한민국 승리 시 당일 사용 가능합니다.</p>
           </section>
 
           <section class="final-cta" id="order">
@@ -1883,7 +2052,7 @@
             <ul>
               <li>본 프로모션은 도미노피자 온라인 회원(홈페이지, 앱) 전용 혜택입니다. (비회원 적용 불가)</li>
               <li>사전예약 30% 할인은 피자(L) 배달 주문 건에 한해 하루 전 예약 시 적용됩니다.</li>
-              <li>대한민국 승리 40% 쿠폰은 승리 당일 오후 3시부터 회원 계정으로 자동 지급되며 포장 주문 시에만 사용 가능합니다.</li>
+              <li>대한민국 승리 40% 쿠폰은 승리 당일 오후 3시부터 회원 계정으로 자동 지급되며, 승리 당일 포장 주문 시 사용 가능합니다.</li>
               <li>모든 피자 할인 적용 가능하나, 세트 / 마이키친 / 썹자는 제외됩니다.</li>
               <li>추가 토핑 금액은 할인에서 제외되며, 피자 기본 도우 가격에 대해서만 할인이 적용됩니다.</li>
               <li>기제휴 및 타 할인(쿠폰, 세트, 방문포장 할인 등)과 중복 적용되지 않습니다.</li>
@@ -1959,14 +2128,13 @@
       document.getElementById('finalPrice').textContent = formatWon(final);
     }
 
-    let tapCount = 0;
-    const maxTap = 12;
+    function updateSelectedCheer(text) {
+      document.getElementById('selectedCheer').textContent = text;
+    }
 
-    function updateGame() {
-      const percent = Math.min(100, (tapCount / maxTap) * 100);
-      document.getElementById('powerFill').style.width = `${percent}%`;
-      document.getElementById('gameCount').textContent = `${tapCount} / ${maxTap} 응원 완료`;
-      document.getElementById('couponResult').classList.toggle('is-show', tapCount >= maxTap);
+    function revealCoupon() {
+      document.getElementById('couponResult').classList.add('is-show');
+      document.getElementById('copyMessage').textContent = '';
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -1979,16 +2147,17 @@
       });
       updateCalculator();
 
-      document.getElementById('tapButton').addEventListener('click', () => {
-        if (tapCount < maxTap) tapCount += 1;
-        updateGame();
+      document.querySelectorAll('.cheer-option').forEach(button => {
+        button.addEventListener('click', () => {
+          document.querySelectorAll('.cheer-option').forEach(item => item.classList.remove('is-selected'));
+          button.classList.add('is-selected');
+          updateSelectedCheer(button.dataset.cheer);
+          document.getElementById('couponResult').classList.remove('is-show');
+          document.getElementById('copyMessage').textContent = '';
+        });
       });
 
-      document.getElementById('resetGame').addEventListener('click', () => {
-        tapCount = 0;
-        updateGame();
-        document.getElementById('copyMessage').textContent = '';
-      });
+      document.getElementById('sendCheer').addEventListener('click', revealCoupon);
 
       document.getElementById('copyCoupon').addEventListener('click', async () => {
         const code = document.getElementById('couponCode').textContent.trim();
@@ -2006,8 +2175,6 @@
           message.textContent = '쿠폰번호가 복사됐어요!';
         }
       });
-
-      updateGame();
     });
   </script>
 
