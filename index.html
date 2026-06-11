@@ -1784,6 +1784,174 @@
       }
     }
 
+
+    /* v6: 레이아웃/가독성 추가 수정 */
+    .interactive-zone {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+      margin-top: 54px;
+    }
+
+    .interactive-card {
+      width: 100%;
+      min-height: auto;
+      padding: 42px;
+    }
+
+    .interactive-card .field-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .interactive-card .calc-result {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .cheer-card .game-area {
+      padding: 28px;
+    }
+
+    .stage-section.victory-stage {
+      margin-top: 54px;
+      border: 2px solid rgba(0, 117, 255, .25);
+    }
+
+    .victory-coupon-board {
+      padding: 24px;
+      border-radius: 30px;
+      background: linear-gradient(145deg, #f2f7ff, #ffffff);
+      border: 1px solid rgba(7, 18, 37, .1);
+      box-shadow: inset 0 0 0 1px rgba(36,245,208,.22), 0 18px 40px rgba(7,18,37,.08);
+    }
+
+    .victory-coupon-inner {
+      min-height: 300px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 34px 24px;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255,63,180,.18), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(36,245,208,.22), transparent 28%),
+        #ffffff;
+      border: 2px dashed rgba(0, 117, 255, .24);
+    }
+
+    .coupon-mini-label {
+      display: inline-flex;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: #e8fffb;
+      color: #007d78;
+      font-size: 14px;
+      font-weight: 1000;
+    }
+
+    .victory-coupon-main {
+      margin-top: 16px;
+      color: #071225;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1;
+      letter-spacing: -0.06em;
+      font-weight: 1000;
+    }
+
+    .victory-coupon-main strong {
+      color: var(--pink);
+      font-size: 1.35em;
+    }
+
+    .victory-coupon-inner p {
+      margin: 14px 0 0;
+      color: #40516c;
+      font-size: 17px;
+      line-height: 1.55;
+      font-weight: 850;
+    }
+
+    .match-chip-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .match-chip-row span {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #f2f7ff;
+      color: #071225;
+      font-weight: 1000;
+      border: 1px solid rgba(7,18,37,.08);
+    }
+
+    .schedule-table-wrap {
+      margin-top: 24px;
+      overflow-x: auto;
+      border-radius: 24px;
+      border: 1px solid rgba(7, 18, 37, .09);
+      background: #ffffff;
+      box-shadow: 0 14px 34px rgba(7,18,37,.06);
+    }
+
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      overflow: hidden;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      padding: 18px 16px;
+      text-align: center;
+      border-bottom: 1px solid rgba(7, 18, 37, .08);
+      color: #31435f;
+      font-size: 15px;
+      font-weight: 850;
+    }
+
+    .schedule-table th {
+      background: #e8fffb;
+      color: #007d78;
+      font-size: 14px;
+      font-weight: 1000;
+    }
+
+    .schedule-table td:first-child {
+      color: #071225;
+      font-size: 20px;
+      font-weight: 1000;
+    }
+
+    .schedule-table tbody tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .benefit-card h3 {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    @media (max-width: 900px) {
+      .interactive-card,
+      .cheer-card .game-area {
+        padding: 24px;
+      }
+
+      .interactive-card .field-grid,
+      .interactive-card .calc-result,
+      .cheer-options {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1908,50 +2076,6 @@
             </div>
           </section>
 
-          <section class="stage-section victory-stage" id="benefit2">
-            <div class="stage-grid">
-              <div>
-                <span class="stage-label">🏆 승리의 기쁨을 배로</span>
-                <h2>대한민국 승리 시<br /><span class="highlight-pink">포장 피자 40%</span> 추가 오픈!</h2>
-                <p class="section-desc">
-                  승리의 열기를 그대로 이어받아 전 국민 피자 파티! 대한민국 대표팀 경기 승리 시 당일 바로 사용 가능한 피자(M, L) 방문 포장 40% 할인 쿠폰을 드립니다.
-                </p>
-                <p class="mini-note">※ 승리 쿠폰은 경기 승리 당일 15:00부터 순차적으로 지급되며, 지급 당일 사용 가능합니다.</p>
-              </div>
-
-              <div class="scoreboard" aria-label="경기 승리 시 쿠폰 지급 안내">
-                <div class="score-row"><strong>6/12 경기 승리 시</strong><span>당일 포장 40%</span></div>
-                <div class="score-row"><strong>6/19 경기 승리 시</strong><span>당일 포장 40%</span></div>
-                <div class="score-row"><strong>6/25 경기 승리 시</strong><span>당일 포장 40%</span></div>
-              </div>
-            </div>
-          </section>
-
-          <section class="product-zone" id="pizza">
-            <article class="product-card has-real-pizza">
-              <h2>응원 열기 올라갈 때,<br />피자 한 판 크게!</h2>
-              <div class="price-tag">
-                <span class="rate">30%</span>
-                <span class="label">사전예약 배달 할인</span>
-              </div>
-              <div class="pizza-photo real-pizza">
-                <img src="assets/pizza-main.png" alt="도미노 피자 제품 이미지" />
-              </div>
-            </article>
-
-            <article class="product-copy-card">
-              <div>
-                <span class="section-kicker">🍕 승리를 부르는 맛있는 주문</span>
-                <h2 class="section-title">맛있는 프리미엄 피자로<br />응원 화력을 더해보세요!</h2>
-              </div>
-              <ul class="chant-list">
-                <li>사전예약으로 배달 폭주 걱정 없이 안심 수령</li>
-                <li>하루 전 예약만 해도 라지 사이즈 30% 즉시 할인</li>
-                <li>승리하면 당일 바로 쓰는 포장 40% 쿠폰</li>
-              </ul>
-            </article>
-          </section>
-
           <section class="interactive-zone" id="interactive">
             <article class="interactive-card" id="calculator">
               <span class="section-kicker">🧮 할인 가격 계산기</span>
@@ -2012,31 +2136,94 @@
             </article>
           </section>
 
+          <section class="stage-section victory-stage" id="benefit2">
+            <div class="stage-grid">
+              <div>
+                <span class="stage-label">🏆 승리의 기쁨을 배로</span>
+                <h2>대한민국 승리 시<br /><span class="highlight-pink">포장 피자 40%</span> 추가 오픈!</h2>
+                <p class="section-desc">
+                  승리 열기를 그대로 피자파티!<br />
+                  경기 승리시 당일 사용 가능한 쿠폰을 받아보세요.
+                </p>
+                <p class="mini-note">※ 승리 쿠폰은 경기 승리 당일 15:00부터 순차적으로 지급되며, 지급 당일 사용 가능합니다.</p>
+              </div>
+
+              <div class="victory-coupon-board" aria-label="경기 승리 시 포장 40% 쿠폰 안내">
+                <div class="victory-coupon-inner">
+                  <span class="coupon-mini-label">승리 당일 사용 가능</span>
+                  <div class="victory-coupon-main">당일 포장 <strong>40%</strong></div>
+                  <p>대한민국 경기 승리 시<br />15:00부터 순차 지급</p>
+                  <div class="match-chip-row" aria-label="대상 경기일">
+                    <span>6/12</span>
+                    <span>6/19</span>
+                    <span>6/25</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="product-zone" id="pizza">
+            <article class="product-card has-real-pizza">
+              <h2>응원 열기 올라갈 때,<br />피자 한 판 크게!</h2>
+              <div class="price-tag">
+                <span class="rate">30%</span>
+                <span class="label">사전예약 배달 할인</span>
+              </div>
+              <div class="pizza-photo real-pizza">
+                <img src="assets/pizza-main.png" alt="도미노 피자 제품 이미지" />
+              </div>
+            </article>
+
+            <article class="product-copy-card">
+              <div>
+                <span class="section-kicker">🍕 승리를 부르는 맛있는 주문</span>
+                <h2 class="section-title">맛있는 프리미엄 피자로<br />응원 화력을 더해보세요!</h2>
+              </div>
+              <ul class="chant-list">
+                <li>사전예약으로 배달 폭주 걱정 없이 안심 수령</li>
+                <li>하루 전 예약만 해도 라지 사이즈 30% 즉시 할인</li>
+                <li>승리하면 당일 바로 쓰는 포장 40% 쿠폰</li>
+              </ul>
+            </article>
+          </section>
+
+
+
           <section class="schedule-section" id="schedule">
             <span class="section-kicker">📅 경기 일정 & 쿠폰 스케줄</span>
-            <h2 class="section-title">예약일과 쿠폰일만<br />빠르게 확인!</h2>
-            <div class="simple-schedule-grid" aria-label="경기 일정과 쿠폰 스케줄">
-              <article class="simple-schedule-card">
-                <span class="schedule-badge mint">MATCH 01</span>
-                <h3>6/12 경기</h3>
-                <p><strong>6/11</strong> 사전예약</p>
-                <p>🚚 배달 30% 적용</p>
-                <p>🏆 승리 당일 15:00 포장 40%</p>
-              </article>
-              <article class="simple-schedule-card">
-                <span class="schedule-badge mint">MATCH 02</span>
-                <h3>6/19 경기</h3>
-                <p><strong>6/18</strong> 사전예약</p>
-                <p>🚚 배달 30% 적용</p>
-                <p>🏆 승리 당일 15:00 포장 40%</p>
-              </article>
-              <article class="simple-schedule-card">
-                <span class="schedule-badge mint">MATCH 03</span>
-                <h3>6/25 경기</h3>
-                <p><strong>6/24</strong> 사전예약</p>
-                <p>🚚 배달 30% 적용</p>
-                <p>🏆 승리 당일 15:00 포장 40%</p>
-              </article>
+            <h2 class="section-title">예약일과 쿠폰일을<br />표로 빠르게 확인!</h2>
+            <div class="schedule-table-wrap" aria-label="경기 일정과 쿠폰 스케줄 표">
+              <table class="schedule-table">
+                <thead>
+                  <tr>
+                    <th>경기일</th>
+                    <th>전날 예약</th>
+                    <th>배달 30%</th>
+                    <th>승리 시 포장 40%</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>6/12</strong></td>
+                    <td>6/11</td>
+                    <td>경기일 배달</td>
+                    <td>당일 15:00 지급</td>
+                  </tr>
+                  <tr>
+                    <td><strong>6/19</strong></td>
+                    <td>6/18</td>
+                    <td>경기일 배달</td>
+                    <td>당일 15:00 지급</td>
+                  </tr>
+                  <tr>
+                    <td><strong>6/25</strong></td>
+                    <td>6/24</td>
+                    <td>경기일 배달</td>
+                    <td>당일 15:00 지급</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
             <p class="mini-note">※ 포장 40% 쿠폰은 대한민국 승리 시 당일 사용 가능합니다.</p>
           </section>
