@@ -1430,6 +1430,181 @@
       .pizza-photo.real-pizza { bottom: 0; width: 108%; }
     }
 
+
+    /* v4: 라이트 모드 전환 및 상단 메뉴 화이트 보드 */
+    body {
+      color: #071225;
+      background: #f6fbff;
+    }
+
+    .page {
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.72), transparent 6%),
+        radial-gradient(circle at 80% 15%, rgba(255, 242, 92, 0.65), transparent 7%),
+        linear-gradient(180deg, #14cfff 0%, #0ca7ff 34%, #f6fbff 34%, #f6fbff 100%);
+    }
+
+    .top-nav {
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(7, 18, 37, 0.1);
+      box-shadow: 0 14px 34px rgba(7, 18, 37, .08);
+    }
+
+    .brand { color: #071225; }
+    .brand span:last-child { color: #071225; }
+
+    .section-black,
+    .footer {
+      background: #f6fbff;
+      color: #071225;
+    }
+
+    .wave-top { background: #f6fbff; }
+
+    .section-title,
+    .stage-section h2,
+    .interactive-card h2,
+    .product-card h2,
+    .final-cta h2 {
+      color: #071225;
+    }
+
+    .section-desc,
+    .hero-copy-wrap .section-desc,
+    .interactive-card .section-desc,
+    .final-cta p {
+      color: #31435f;
+    }
+
+    .section-kicker {
+      background: rgba(36, 245, 208, .18);
+      color: #007d78;
+      border-color: rgba(0, 125, 120, .2);
+    }
+
+    .benefit-card,
+    .stage-section,
+    .victory-stage,
+    .interactive-card,
+    .product-card,
+    .product-copy-card,
+    .schedule-section,
+    .final-cta,
+    .notice {
+      background:
+        radial-gradient(circle at 92% 8%, rgba(18, 199, 255, .12), transparent 28%),
+        #ffffff;
+      color: #071225;
+      border: 1px solid rgba(7, 18, 37, .08);
+      box-shadow: 0 24px 64px rgba(7, 18, 37, .1);
+    }
+
+    .benefit-card p,
+    .step-card p,
+    .mini-note,
+    .notice ul,
+    .chant-list li,
+    .score-row strong,
+    .field label,
+    .game-count {
+      color: #40516c;
+    }
+
+    .step-card,
+    .scoreboard,
+    .score-row,
+    .schedule-table,
+    .result-line,
+    .game-area,
+    .phone-caption,
+    .chant-list li {
+      background: #f2f7ff;
+      border-color: rgba(7, 18, 37, .08);
+      color: #071225;
+    }
+
+    .schedule-table th {
+      background: #e8fffb;
+      color: #007d78;
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      border-bottom-color: rgba(7, 18, 37, .08);
+      color: #31435f;
+    }
+
+    .schedule-table td strong { color: #071225; }
+
+    .field input,
+    .field select {
+      background: #f7fbff;
+      color: #071225;
+      border-color: rgba(7, 18, 37, .14);
+    }
+
+    .result-line.final {
+      background: #e8fffb;
+      color: #071225;
+    }
+
+    .deal-ticket {
+      border: 1px solid rgba(7, 18, 37, .08);
+      box-shadow: 0 20px 40px rgba(7,18,37,.12);
+    }
+
+    .countdown-card {
+      background: rgba(255, 255, 255, .78);
+      border: 1px solid rgba(7,18,37,.1);
+      color: #071225;
+      box-shadow: 0 18px 38px rgba(7,18,37,.12);
+    }
+
+    .countdown-head { color: #008e86; }
+    .countdown-match { color: #071225; }
+    .time-box { background: #f2f7ff; border-color: rgba(7,18,37,.08); }
+    .time-box strong { color: #071225; }
+    .time-box span { color: #52627a; }
+
+    .copy-coupon {
+      width: 100%;
+      margin-top: 14px;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 18px;
+      background: var(--mint);
+      color: #021014;
+      font: inherit;
+      font-weight: 1000;
+      cursor: pointer;
+      box-shadow: 0 12px 24px rgba(36,245,208,.28);
+    }
+
+    .coupon-code {
+      margin-top: 14px;
+      padding: 13px 16px;
+      border-radius: 16px;
+      background: #f2f7ff;
+      border: 1px dashed rgba(7,18,37,.18);
+      color: #071225;
+      font-size: 20px;
+      font-weight: 1000;
+      letter-spacing: .04em;
+    }
+
+    .copy-message {
+      min-height: 22px;
+      margin-top: 10px;
+      color: #007d78;
+      font-size: 14px;
+      font-weight: 900;
+    }
+
+    .reset-game {
+      background: #e8eef8;
+      color: #071225;
+    }
+
   </style>
 </head>
 <body>
@@ -1457,7 +1632,7 @@
               주문 폭주로 킥오프 놓치지 마세요! 경기 전날 도미노 앱으로 미리 예약하면, 대기 없이 따뜻한 피자가 원하는 시간에 도착합니다. 30% 보너스 할인 혜택까지 먼저 선점하세요.
             </p>
             <div class="hero-actions">
-              <a class="primary-btn" href="#benefit1">주문하러 가기</a>
+              <a class="primary-btn" href="#order">주문하러 가기</a>
               <a class="secondary-btn" href="#benefits">월드컵 혜택 확인</a>
             </div>
             <div class="countdown-card" aria-label="다음 경기까지 남은 시간">
@@ -1509,72 +1684,7 @@
             </article>
           </div>
 
-          <section class="schedule-section" id="schedule">
-            <span class="section-kicker">📅 전체 경기일정 & 쿠폰 스케줄</span>
-            <h2 class="section-title">언제 예약하고,<br />언제 쿠폰 받는지 한눈에!</h2>
-            <p class="section-desc">경기 전날에는 배달 30% 사전예약, 대한민국 승리 당일에는 포장 40% 쿠폰을 체크하세요.</p>
-            <div class="schedule-table-wrap">
-              <table class="schedule-table">
-                <thead>
-                  <tr>
-                    <th>경기일</th>
-                    <th>전날 사전예약</th>
-                    <th>배달 30% 혜택</th>
-                    <th>승리 시 쿠폰 스케줄</th>
-                    <th>사용 조건</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span class="schedule-badge mint">MATCH 01</span><br /><strong>6/12</strong> 대한민국 경기</td>
-                    <td><strong>6/11</strong> 도미노 앱 예약</td>
-                    <td>6/12에 받을 피자(L) 배달 <strong>30% 할인</strong></td>
-                    <td>승리 시 6/12 <strong>15:00부터</strong> 순차 지급</td>
-                    <td>피자(M/L) 포장 <strong>40% 할인</strong></td>
-                  </tr>
-                  <tr>
-                    <td><span class="schedule-badge mint">MATCH 02</span><br /><strong>6/19</strong> 대한민국 경기</td>
-                    <td><strong>6/18</strong> 도미노 앱 예약</td>
-                    <td>6/19에 받을 피자(L) 배달 <strong>30% 할인</strong></td>
-                    <td>승리 시 6/19 <strong>15:00부터</strong> 순차 지급</td>
-                    <td>피자(M/L) 포장 <strong>40% 할인</strong></td>
-                  </tr>
-                  <tr>
-                    <td><span class="schedule-badge mint">MATCH 03</span><br /><strong>6/25</strong> 대한민국 경기</td>
-                    <td><strong>6/24</strong> 도미노 앱 예약</td>
-                    <td>6/25에 받을 피자(L) 배달 <strong>30% 할인</strong></td>
-                    <td>승리 시 6/25 <strong>15:00부터</strong> 순차 지급</td>
-                    <td>피자(M/L) 포장 <strong>40% 할인</strong></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="mini-note">※ 경기 시간은 실제 운영 일정에 맞춰 코드 하단의 matchSchedule 값에서 수정 가능합니다.</p>
-          </section>
 
-          <section class="stage-section" id="benefit1">
-            <div class="stage-grid">
-              <div>
-                <span class="stage-label">STAGE 01 · 배달대란 탈출하기</span>
-                <h2>경기 전날 예약하고<br /><span class="highlight-pink">배달 피자 30%</span> 혜택 받기</h2>
-                <p class="section-desc">
-                  당일 주문 폭주로 인한 배달 지연 걱정은 끝! 하루 전 미리 예약하고 여유롭게 경기 시작을 기다리세요.
-                </p>
-                <div class="date-pill-row" aria-label="예약 주문 날짜와 배달 날짜">
-                  <span class="date-pill"><strong>6/11 예약</strong> → 6/12 배달</span>
-                  <span class="date-pill"><strong>6/18 예약</strong> → 6/19 배달</span>
-                  <span class="date-pill"><strong>6/24 예약</strong> → 6/25 배달</span>
-                </div>
-                <p class="mini-note">※ 온라인 회원 전용 혜택이며, 피자(L) 배달 주문 기준 적용됩니다.</p>
-              </div>
-
-              <div class="deal-ticket" aria-label="배달 피자 30% 할인 티켓">
-                <div class="ticket-small">DOMINO APP PRE-ORDER COUPON</div>
-                <div class="ticket-big"><span>30</span><span>%</span></div>
-                <div class="ticket-copy">전날 사전예약 시 배달 즉시 할인</div>
-              </div>
-            </div>
-          </section>
 
           <section class="app-mock-section" id="howto">
             <div>
@@ -1665,11 +1775,15 @@
             <article class="interactive-card" id="calculator">
               <span class="section-kicker">🧮 할인 가격 계산기</span>
               <h2>내 피자 할인 가격,<br /><span class="highlight-mint">바로 계산해보기</span></h2>
-              <p class="section-desc">피자 기본 가격과 수량을 넣으면 30%/40% 할인 적용 금액을 바로 확인할 수 있어요.</p>
+              <p class="section-desc">대표 피자 3종을 선택하면 30%/40% 할인 적용 예상 금액을 바로 확인할 수 있어요.</p>
               <div class="field-grid">
                 <div class="field">
-                  <label for="basePrice">피자 기본 가격</label>
-                  <input id="basePrice" type="number" min="0" step="100" value="35900" inputmode="numeric" />
+                  <label for="basePrice">대표 피자 선택</label>
+                  <select id="basePrice">
+                    <option value="27900">포테이토 L · 27,900원</option>
+                    <option value="29900">그릴드 패티 치즈 버거 L · 29,900원</option>
+                    <option value="33900">와일드 와일드 웨스트 스테이크 L · 33,900원</option>
+                  </select>
                 </div>
                 <div class="field">
                   <label for="pizzaQty">수량</label>
@@ -1687,11 +1801,11 @@
                 </div>
               </div>
               <div class="calc-result" aria-live="polite">
-                <div class="result-line"><span>정가 합계</span><strong id="originalPrice">35,900원</strong></div>
-                <div class="result-line"><span>할인 금액</span><strong id="discountPrice">10,770원</strong></div>
-                <div class="result-line final"><span>예상 결제금액</span><strong id="finalPrice">25,130원</strong></div>
+                <div class="result-line"><span>정가 합계</span><strong id="originalPrice">27,900원</strong></div>
+                <div class="result-line"><span>할인 금액</span><strong id="discountPrice">- 8,370원</strong></div>
+                <div class="result-line final"><span>예상 결제금액</span><strong id="finalPrice">19,530원</strong></div>
               </div>
-              <p class="mini-note">※ 추가 토핑 금액은 제외, 피자 기본 가격 기준 계산 예시입니다.</p>
+              <p class="mini-note">※ 가격은 대표 피자 L 기준 예시이며, 추가 토핑 금액은 제외됩니다. 실제 주문 전 공식 앱 가격을 확인해주세요.</p>
             </article>
 
             <article class="interactive-card" id="couponGame">
@@ -1707,10 +1821,55 @@
                 <div class="coupon-result" id="couponResult" aria-live="polite">
                   <div class="coupon-title">쿠폰 도착!</div>
                   <p><strong>배달 30% 할인</strong><br />경기 전날 사전예약하고 더 맛있게 응원하자!</p>
+                  <div class="coupon-code" id="couponCode">DOMINO-WC-30</div>
+                  <button class="copy-coupon" id="copyCoupon" type="button">쿠폰번호 복사하기</button>
+                  <div class="copy-message" id="copyMessage" aria-live="polite"></div>
                 </div>
                 <button class="reset-game" id="resetGame" type="button">다시 채우기</button>
               </div>
             </article>
+          </section>
+
+          <section class="schedule-section" id="schedule">
+            <span class="section-kicker">📅 전체 경기일정 & 쿠폰 스케줄</span>
+            <h2 class="section-title">언제 예약하고,<br />언제 쿠폰 받는지 한눈에!</h2>
+            <p class="section-desc">경기 전날에는 배달 30% 사전예약, 대한민국 승리 당일에는 포장 40% 쿠폰을 체크하세요.</p>
+            <div class="schedule-table-wrap">
+              <table class="schedule-table">
+                <thead>
+                  <tr>
+                    <th>경기일</th>
+                    <th>전날 사전예약</th>
+                    <th>배달 30% 혜택</th>
+                    <th>승리 시 쿠폰 스케줄</th>
+                    <th>사용 조건</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><span class="schedule-badge mint">MATCH 01</span><br /><strong>6/12</strong> 대한민국 경기</td>
+                    <td><strong>6/11</strong> 도미노 앱 예약</td>
+                    <td>6/12에 받을 피자(L) 배달 <strong>30% 할인</strong></td>
+                    <td>승리 시 6/12 <strong>15:00부터</strong> 순차 지급</td>
+                    <td>피자(M/L) 포장 <strong>40% 할인</strong></td>
+                  </tr>
+                  <tr>
+                    <td><span class="schedule-badge mint">MATCH 02</span><br /><strong>6/19</strong> 대한민국 경기</td>
+                    <td><strong>6/18</strong> 도미노 앱 예약</td>
+                    <td>6/19에 받을 피자(L) 배달 <strong>30% 할인</strong></td>
+                    <td>승리 시 6/19 <strong>15:00부터</strong> 순차 지급</td>
+                    <td>피자(M/L) 포장 <strong>40% 할인</strong></td>
+                  </tr>
+                  <tr>
+                    <td><span class="schedule-badge mint">MATCH 03</span><br /><strong>6/25</strong> 대한민국 경기</td>
+                    <td><strong>6/24</strong> 도미노 앱 예약</td>
+                    <td>6/25에 받을 피자(L) 배달 <strong>30% 할인</strong></td>
+                    <td>승리 시 6/25 <strong>15:00부터</strong> 순차 지급</td>
+                    <td>피자(M/L) 포장 <strong>40% 할인</strong></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </section>
 
           <section class="final-cta" id="order">
@@ -1828,6 +1987,24 @@
       document.getElementById('resetGame').addEventListener('click', () => {
         tapCount = 0;
         updateGame();
+        document.getElementById('copyMessage').textContent = '';
+      });
+
+      document.getElementById('copyCoupon').addEventListener('click', async () => {
+        const code = document.getElementById('couponCode').textContent.trim();
+        const message = document.getElementById('copyMessage');
+        try {
+          await navigator.clipboard.writeText(code);
+          message.textContent = '쿠폰번호가 복사됐어요!';
+        } catch (error) {
+          const tempInput = document.createElement('input');
+          tempInput.value = code;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+          message.textContent = '쿠폰번호가 복사됐어요!';
+        }
       });
 
       updateGame();
