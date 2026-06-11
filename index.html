@@ -1952,6 +1952,167 @@
       }
     }
 
+  
+
+    /* v7: 화이트모드 가독성 + 섹션 흐름형 레이아웃 */
+    .step-card:hover {
+      background: #e8fffb;
+      color: #071225;
+      border-color: rgba(0, 125, 120, .22);
+      box-shadow: 0 12px 26px rgba(0, 125, 120, .08);
+      transform: translateY(-2px);
+    }
+
+    .step-card:hover h3,
+    .step-card:hover p {
+      color: #071225;
+    }
+
+    .section-black {
+      background:
+        linear-gradient(180deg, #f6fbff 0%, #ffffff 34%, #f6fbff 68%, #ffffff 100%);
+    }
+
+    .benefit-card,
+    .stage-section,
+    .interactive-card,
+    .schedule-section,
+    .final-cta,
+    .notice {
+      border-radius: 26px;
+      box-shadow: 0 16px 36px rgba(7, 18, 37, .07);
+    }
+
+    .app-mock-section,
+    .interactive-zone,
+    .product-flow-section,
+    .stage-section.victory-stage,
+    .schedule-section,
+    .final-cta {
+      position: relative;
+    }
+
+    .app-mock-section::after,
+    .product-flow-section::after,
+    .stage-section.victory-stage::after,
+    .schedule-section::after {
+      content: "";
+      position: absolute;
+      left: 5%;
+      right: 5%;
+      bottom: -28px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,117,255,.16), transparent);
+    }
+
+    .interactive-zone {
+      gap: 18px;
+    }
+
+    .interactive-card {
+      border-radius: 22px;
+      border-color: rgba(7, 18, 37, .06);
+    }
+
+    .interactive-card + .interactive-card {
+      margin-top: -4px;
+    }
+
+    .product-flow-section {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, .78fr);
+      align-items: center;
+      gap: 24px;
+      margin-top: 54px;
+      padding: 52px 42px;
+      color: #071225;
+      background:
+        radial-gradient(circle at 78% 26%, rgba(255,63,180,.14), transparent 25%),
+        radial-gradient(circle at 12% 16%, rgba(36,245,208,.22), transparent 28%),
+        linear-gradient(135deg, #ffffff 0%, #f2f7ff 100%);
+      border-top: 1px solid rgba(7, 18, 37, .07);
+      border-bottom: 1px solid rgba(7, 18, 37, .07);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 18px 42px rgba(7, 18, 37, .08);
+    }
+
+    .product-flow-copy {
+      position: relative;
+      z-index: 2;
+    }
+
+    .flow-price-tag {
+      background: #ffffff;
+      border: 1px solid rgba(7,18,37,.08);
+      box-shadow: 0 12px 26px rgba(7,18,37,.08);
+    }
+
+    .flow-chant-list {
+      margin-top: 24px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .flow-chant-list li {
+      background: rgba(255,255,255,.72);
+      color: #31435f;
+      border: 1px solid rgba(7,18,37,.08);
+      box-shadow: none;
+    }
+
+    .product-flow-visual {
+      display: grid;
+      place-items: center;
+      min-height: 350px;
+    }
+
+    .product-flow-visual img {
+      width: min(520px, 100%);
+      height: auto;
+      display: block;
+      filter: drop-shadow(0 24px 28px rgba(7,18,37,.18));
+      transform: rotate(2deg);
+    }
+
+    .stage-section.victory-stage {
+      background:
+        radial-gradient(circle at 90% 12%, rgba(255,63,180,.14), transparent 28%),
+        linear-gradient(135deg, #ffffff, #f7fbff);
+      border: 1px solid rgba(0, 117, 255, .18);
+      border-radius: 22px;
+      box-shadow: 0 18px 42px rgba(7,18,37,.08);
+    }
+
+    .stage-section.victory-stage .stage-label {
+      background: rgba(255,63,180,.12);
+      color: #bd1477;
+      border: 1px solid rgba(255,63,180,.22);
+    }
+
+    .victory-coupon-board {
+      box-shadow: none;
+    }
+
+    .schedule-table-wrap {
+      border-radius: 18px;
+      box-shadow: none;
+    }
+
+    @media (max-width: 900px) {
+      .product-flow-section,
+      .flow-chant-list {
+        grid-template-columns: 1fr;
+      }
+
+      .product-flow-section {
+        padding: 34px 24px;
+      }
+
+      .product-flow-visual {
+        min-height: auto;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -2136,6 +2297,27 @@
             </article>
           </section>
 
+          <section class="product-flow-section" id="pizza">
+            <div class="product-flow-copy">
+              <span class="section-kicker">🍕 승리를 부르는 맛있는 주문</span>
+              <h2 class="section-title">응원 열기 올라갈 때,<br />피자 한 판 크게!</h2>
+              <p class="section-desc">경기 보는 날은 고민하지 말고 피자 한 판! 사전예약으로 배달 폭주 걱정을 줄이고, 할인 혜택까지 챙겨보세요.</p>
+              <div class="price-tag flow-price-tag">
+                <span class="rate">30%</span>
+                <span class="label">🚚 사전예약 배달 할인</span>
+              </div>
+              <ul class="chant-list flow-chant-list">
+                <li>사전예약으로 배달 폭주 걱정 없이 안심 수령</li>
+                <li>하루 전 예약만 해도 라지 사이즈 30% 즉시 할인</li>
+                <li>승리하면 당일 바로 쓰는 포장 40% 쿠폰</li>
+              </ul>
+            </div>
+            <div class="product-flow-visual" aria-label="도미노 피자 제품 이미지">
+              <img src="assets/pizza-main.png" alt="도미노 피자 제품 이미지" />
+            </div>
+          </section>
+
+
           <section class="stage-section victory-stage" id="benefit2">
             <div class="stage-grid">
               <div>
@@ -2163,30 +2345,6 @@
             </div>
           </section>
 
-          <section class="product-zone" id="pizza">
-            <article class="product-card has-real-pizza">
-              <h2>응원 열기 올라갈 때,<br />피자 한 판 크게!</h2>
-              <div class="price-tag">
-                <span class="rate">30%</span>
-                <span class="label">사전예약 배달 할인</span>
-              </div>
-              <div class="pizza-photo real-pizza">
-                <img src="assets/pizza-main.png" alt="도미노 피자 제품 이미지" />
-              </div>
-            </article>
-
-            <article class="product-copy-card">
-              <div>
-                <span class="section-kicker">🍕 승리를 부르는 맛있는 주문</span>
-                <h2 class="section-title">맛있는 프리미엄 피자로<br />응원 화력을 더해보세요!</h2>
-              </div>
-              <ul class="chant-list">
-                <li>사전예약으로 배달 폭주 걱정 없이 안심 수령</li>
-                <li>하루 전 예약만 해도 라지 사이즈 30% 즉시 할인</li>
-                <li>승리하면 당일 바로 쓰는 포장 40% 쿠폰</li>
-              </ul>
-            </article>
-          </section>
 
 
 
