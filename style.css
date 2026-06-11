@@ -7,9 +7,9 @@
   --pink: #ff4fe3;
   --gray-card: #202124;
   --line: rgba(255, 255, 255, 0.14);
-  --display: "Black Han Sans", "Arial Black", sans-serif;
+  --display: "Jua", "Arial Rounded MT Bold", sans-serif;
   --round: "Jua", "Arial Rounded MT Bold", sans-serif;
-  --body: "Gowun Dodum", "Apple SD Gothic Neo", sans-serif;
+  --body: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -294,7 +294,7 @@ img { display: block; max-width: 100%; }
 }
 
 /* Reference poster direction */
-:root { --poster: "Bagel Fat One", "Jua", sans-serif; }
+:root { --poster: "Jua", "Arial Rounded MT Bold", sans-serif; }
 body { background: #050505; }
 
 .site-header {
@@ -303,13 +303,24 @@ body { background: #050505; }
   background: rgba(0, 93, 145, .2);
   backdrop-filter: blur(8px);
 }
-.brand { padding: 7px 15px; border-radius: 12px; background: white; box-shadow: 0 5px 0 rgba(0,47,74,.25); }
+.brand { padding: 0; border-radius: 0; background: transparent; box-shadow: none; }
 .brand-logo { width: 150px; height: auto; }
 .header-order { border: 0; color: #07181e; background: white; box-shadow: 0 5px 0 rgba(0,47,74,.25); }
 .header-order:hover, .header-order:focus-visible { color: white; background: #07181e; }
 
 .hero { min-height: 900px; background: var(--blue); }
-.hero-image { object-position: center; }
+.hero-image {
+  top: auto;
+  right: max(0px, calc((100vw - 1500px) / 2));
+  bottom: 55px;
+  left: auto;
+  width: min(68vw, 1040px);
+  height: calc(100% - 82px);
+  object-fit: contain;
+  object-position: right bottom;
+  filter: saturate(1.04) contrast(1.02);
+  mask-image: linear-gradient(90deg, transparent 0, rgba(0,0,0,.45) 8%, black 22%);
+}
 .hero-shade {
   background:
     linear-gradient(90deg, rgba(35,199,243,.98) 0%, rgba(35,199,243,.91) 26%, rgba(35,199,243,.38) 49%, rgba(0,0,0,.03) 72%),
@@ -394,6 +405,9 @@ body { background: #050505; }
 .step-copy b { color: var(--mint); font: 18px/1 var(--round); }
 .step-copy p { color: #e2e2e2; }
 .screen-card--focus { border-color: var(--pink); }
+.phone-grid--reference { align-items: start; gap: 26px; }
+.reference-phone { margin: 0; overflow: hidden; border-radius: 18px; background: #555; box-shadow: 0 12px 24px rgba(0,0,0,.2); }
+.reference-phone img { width: 100%; height: auto; }
 
 .victory-layout { grid-template-columns: 1.05fr .95fr; gap: 65px; align-items: center; }
 .pizza-panel { min-height: 485px; border: 0; border-radius: 26px; }
@@ -418,22 +432,23 @@ body { background: #050505; }
 .cta-button { border-radius: 4px; background: var(--mint); box-shadow: none; }
 .cta-button:hover, .cta-button:focus-visible { box-shadow: 8px 8px 0 var(--pink); }
 .notice-section { border-top: 1px solid #ddd; }
-.site-footer img { width: 125px; height: auto; padding: 5px 9px; border-radius: 5px; background: white; }
+.site-footer img { width: 125px; height: auto; padding: 0; border-radius: 0; background: transparent; }
 
 @keyframes ballSpin { to { transform: rotate(360deg); } }
 
 @media (max-width: 1100px) {
   .hero-copy { width: min(650px, 67vw); }
+  .hero-image { right: -7%; width: 76vw; opacity: .78; }
   .poster-panel { padding: 48px; }
   .detail-layout, .victory-layout { grid-template-columns: 1fr; }
   .victory-content { order: -1; }
 }
 
 @media (max-width: 760px) {
-  .brand { padding: 5px 9px; }
+  .brand { padding: 0; }
   .brand-logo { width: 112px; }
   .hero { min-height: auto; }
-  .hero-image { object-position: 64% center; opacity: .55; }
+  .hero-image { right: -55%; bottom: 55px; width: 145%; height: 76%; object-position: right bottom; opacity: .42; mask-image: linear-gradient(90deg,transparent 0,black 42%); }
   .hero-shade { background: linear-gradient(90deg,rgba(35,199,243,.98),rgba(35,199,243,.88) 64%,rgba(35,199,243,.35)); }
   .hero-inner { padding-top: 105px; }
   .hero-copy { width: 100%; }
@@ -451,6 +466,8 @@ body { background: #050505; }
   .detail-content h2, .victory-content h2 { font-size: 35px; }
   .app-guide { padding: 26px 15px 31px; }
   .phone-step { grid-template-columns: 80px minmax(0,220px); }
+  .phone-grid--reference { grid-template-columns: 1fr; }
+  .reference-phone { max-width: 310px; margin: 0 auto; }
   .pizza-panel, .pizza-panel img { min-height: 400px; height: 400px; }
   .victory-flow { grid-template-columns: 1fr; }
   .victory-flow li { flex-direction: row; text-align: left; }
