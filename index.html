@@ -2426,6 +2426,275 @@
       }
     }
 
+
+
+    /* v9: 카드형 둥근 사각형 완전 제거 + GitHub Pages용 스크롤 등장 애니메이션 보강 */
+    :root {
+      --flow-line-strong: rgba(7, 18, 37, .14);
+      --flow-line-soft: rgba(7, 18, 37, .08);
+      --flow-bg: #f7fbff;
+      --flow-bg-alt: #ffffff;
+    }
+
+    /* 기존 v8 reveal이 실패해도 화면을 가리지 않도록 초기화 */
+    .scroll-reveal,
+    .scroll-reveal.is-visible {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    /* 큰 박스/카드/프레임의 둥근 모서리와 사각 테두리 제거 */
+    .benefit-card,
+    .app-mock-section,
+    .interactive-card,
+    .product-flow-section,
+    .stage-section,
+    .stage-section.victory-stage,
+    .schedule-section,
+    .final-cta,
+    .notice,
+    .countdown-card,
+    .time-box,
+    .hero-image-frame,
+    .phone-image-stack,
+    .phone-shot,
+    .phone-caption,
+    .step-card,
+    .field,
+    .field input,
+    .field select,
+    .result-line,
+    .game-area,
+    .cheer-option,
+    .selected-cheer,
+    .coupon-result,
+    .coupon-code,
+    .flow-price-tag,
+    .flow-chant-list,
+    .flow-chant-list li,
+    .victory-coupon-board,
+    .victory-coupon-inner,
+    .schedule-table-wrap,
+    .schedule-table,
+    .schedule-table th,
+    .schedule-table td {
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    /* 영역은 보존하되, 박스처럼 보이는 외곽선은 제거 */
+    .app-mock-section,
+    .interactive-card,
+    .product-flow-section,
+    .stage-section.victory-stage,
+    .schedule-section,
+    .final-cta,
+    .notice {
+      background: transparent !important;
+      border: 0 !important;
+      border-top: 1px solid var(--flow-line-strong) !important;
+      margin-top: 64px !important;
+      padding: 64px 0 !important;
+    }
+
+    .interactive-card + .interactive-card {
+      margin-top: 0 !important;
+      border-top: 1px solid var(--flow-line-soft) !important;
+    }
+
+    .benefit-summary {
+      background: transparent !important;
+      border-top: 1px solid var(--flow-line-strong) !important;
+      border-bottom: 1px solid var(--flow-line-strong) !important;
+    }
+
+    .benefit-card {
+      background: transparent !important;
+      border: 0 !important;
+    }
+
+    .benefit-card + .benefit-card {
+      border-left: 1px solid var(--flow-line-soft) !important;
+    }
+
+    .steps,
+    .interactive-card .field-grid,
+    .interactive-card .calc-result,
+    .cheer-options,
+    .flow-chant-list {
+      border-top: 1px solid var(--flow-line-soft) !important;
+      border-bottom: 1px solid var(--flow-line-soft) !important;
+    }
+
+    .step-card,
+    .field,
+    .result-line,
+    .cheer-option,
+    .flow-chant-list li {
+      background: transparent !important;
+      border: 0 !important;
+      border-right: 1px solid var(--flow-line-soft) !important;
+    }
+
+    .step-card {
+      border-right: 0 !important;
+      border-bottom: 1px solid var(--flow-line-soft) !important;
+    }
+
+    .step-card:last-child,
+    .field:last-child,
+    .result-line:last-child,
+    .cheer-option:last-child,
+    .flow-chant-list li:last-child {
+      border-right: 0 !important;
+      border-bottom: 0 !important;
+    }
+
+    .step-card:hover,
+    .cheer-option:hover,
+    .cheer-option.is-selected {
+      background: linear-gradient(90deg, rgba(36,245,208,.16), transparent) !important;
+      color: #071225 !important;
+      transform: none !important;
+    }
+
+    .step-card:hover h3,
+    .step-card:hover p,
+    .cheer-option:hover,
+    .cheer-option.is-selected,
+    .cheer-option:hover span,
+    .cheer-option.is-selected span {
+      color: #071225 !important;
+    }
+
+    .countdown-card {
+      background: transparent !important;
+      border: 0 !important;
+      border-top: 1px solid rgba(255,255,255,.5) !important;
+      border-bottom: 1px solid rgba(255,255,255,.5) !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .time-box {
+      background: rgba(255,255,255,.72) !important;
+      border: 0 !important;
+    }
+
+    .hero-image-frame,
+    .phone-shot,
+    .phone-caption {
+      background: transparent !important;
+      border: 0 !important;
+    }
+
+    .phone-shot img {
+      border-radius: 0 !important;
+      box-shadow: none !important;
+    }
+
+    .product-flow-section {
+      background:
+        radial-gradient(circle at 84% 22%, rgba(255,63,180,.13), transparent 24%),
+        radial-gradient(circle at 6% 18%, rgba(36,245,208,.2), transparent 28%) !important;
+      overflow: visible !important;
+    }
+
+    .flow-price-tag,
+    .selected-cheer,
+    .coupon-result,
+    .coupon-code,
+    .victory-coupon-board,
+    .victory-coupon-inner,
+    .schedule-table-wrap {
+      background: transparent !important;
+      border: 0 !important;
+    }
+
+    .selected-cheer,
+    .coupon-result,
+    .victory-coupon-inner {
+      border-top: 1px solid var(--flow-line-soft) !important;
+      border-bottom: 1px solid var(--flow-line-soft) !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    .victory-coupon-inner {
+      border-top: 4px solid var(--pink) !important;
+    }
+
+    .schedule-table-wrap {
+      overflow-x: auto !important;
+    }
+
+    .schedule-table {
+      background: transparent !important;
+    }
+
+    .schedule-table th {
+      background: rgba(36,245,208,.16) !important;
+      border-bottom: 1px solid var(--flow-line-soft) !important;
+    }
+
+    .schedule-table td {
+      background: transparent !important;
+      border-bottom: 1px solid var(--flow-line-soft) !important;
+    }
+
+    .final-cta {
+      text-align: center !important;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(36,245,208,.2), transparent 40%) !important;
+    }
+
+    /* 새 스크롤 애니메이션: GitHub Pages에서도 즉시 작동하는 방식 */
+    .reveal-ready .reveal-up {
+      opacity: 0;
+      transform: translate3d(0, 34px, 0);
+      transition:
+        opacity .78s cubic-bezier(.2, .8, .2, 1),
+        transform .78s cubic-bezier(.2, .8, .2, 1);
+      transition-delay: var(--reveal-delay, 0ms);
+      will-change: opacity, transform;
+    }
+
+    .reveal-ready .reveal-up.reveal-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-ready .reveal-up {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .benefit-card + .benefit-card,
+      .field,
+      .result-line,
+      .cheer-option,
+      .flow-chant-list li {
+        border-left: 0 !important;
+        border-right: 0 !important;
+        border-bottom: 1px solid var(--flow-line-soft) !important;
+      }
+
+      .app-mock-section,
+      .interactive-card,
+      .product-flow-section,
+      .stage-section.victory-stage,
+      .schedule-section,
+      .final-cta,
+      .notice {
+        padding: 50px 0 !important;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -2904,6 +3173,106 @@
         });
       });
     });
+  </script>
+
+
+  <script>
+    /* v9 scroll reveal: DOMContentLoaded 타이밍/캐시와 상관없이 작동 */
+    (function () {
+      function initV9Reveal() {
+        const selectors = [
+          '.hero .badge',
+          '.hero-title-image',
+          '.hero-copy',
+          '.hero-actions',
+          '.countdown-card',
+          '.hero-main-img',
+          '.section-black .section-kicker',
+          '.section-black .section-title',
+          '.section-black .section-desc',
+          '.benefit-card',
+          '.step-card',
+          '.phone-shot',
+          '.phone-caption',
+          '#calculator .field',
+          '#calculator .result-line',
+          '#couponGame .cheer-option',
+          '#couponGame .selected-cheer',
+          '#couponGame .send-cheer',
+          '.product-flow-copy > *',
+          '.product-flow-visual',
+          '.stage-section.victory-stage .stage-label',
+          '.stage-section.victory-stage h2',
+          '.stage-section.victory-stage .section-desc',
+          '.stage-section.victory-stage .mini-note',
+          '.victory-coupon-board',
+          '.schedule-table thead',
+          '.schedule-table tbody tr',
+          '.final-cta h2',
+          '.final-cta p',
+          '.final-cta .big-cta',
+          '.notice summary',
+          '.notice li'
+        ];
+
+        const items = Array.from(document.querySelectorAll(selectors.join(',')))
+          .filter((el, index, arr) => arr.indexOf(el) === index && !el.closest('.coupon-result'));
+
+        if (!items.length) return;
+
+        document.documentElement.classList.add('reveal-ready');
+
+        items.forEach((el) => {
+          const parent = el.closest('section, article, .benefit-summary, .hero-copy-wrap, .hero-visual, details') || document.body;
+          const siblings = items.filter(item => {
+            const itemParent = item.closest('section, article, .benefit-summary, .hero-copy-wrap, .hero-visual, details') || document.body;
+            return itemParent === parent;
+          });
+          const order = siblings.indexOf(el);
+          el.classList.add('reveal-up');
+          el.style.setProperty('--reveal-delay', `${Math.min(order * 90, 720)}ms`);
+        });
+
+        const show = (el) => el.classList.add('reveal-visible');
+
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                show(entry.target);
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+
+          items.forEach((el) => observer.observe(el));
+        } else {
+          const onScroll = () => {
+            const bottom = window.innerHeight * 0.9;
+            items.forEach((el) => {
+              if (!el.classList.contains('reveal-visible') && el.getBoundingClientRect().top < bottom) {
+                show(el);
+              }
+            });
+          };
+          window.addEventListener('scroll', onScroll, { passive: true });
+          window.addEventListener('resize', onScroll);
+          onScroll();
+        }
+
+        requestAnimationFrame(() => {
+          items.forEach((el) => {
+            if (el.getBoundingClientRect().top < window.innerHeight * 0.9) show(el);
+          });
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initV9Reveal);
+      } else {
+        initV9Reveal();
+      }
+    })();
   </script>
 
 </body>
