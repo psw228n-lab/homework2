@@ -154,6 +154,11 @@
       gap: 34px;
     }
 
+    .hero-copy-wrap {
+      position: relative;
+      z-index: 2;
+    }
+
     .badge-row {
       display: flex;
       align-items: center;
@@ -909,22 +914,21 @@
     }
 
     .hero-visual.actual-hero {
-      min-height: 570px;
+      position: relative;
+      z-index: 1;
+      min-height: 650px;
       display: grid;
       place-items: center;
     }
 
     .hero-image-frame {
       position: relative;
-      width: min(560px, 100%);
-      min-height: 560px;
-      border-radius: 44px;
-      background:
-        radial-gradient(circle at 50% 12%, rgba(255, 255, 255, .78), transparent 24%),
-        radial-gradient(circle at 20% 80%, rgba(255, 63, 180, .22), transparent 30%),
-        linear-gradient(180deg, rgba(255,255,255,.22), rgba(255,255,255,.06));
-      border: 1px solid rgba(255,255,255,.42);
-      box-shadow: 0 28px 70px rgba(0, 45, 110, .34);
+      width: min(650px, 100%);
+      min-height: 650px;
+      border-radius: 0;
+      background: transparent;
+      border: 0;
+      box-shadow: none;
       overflow: visible;
     }
 
@@ -944,9 +948,9 @@
     .hero-main-img {
       position: absolute;
       left: 50%;
-      bottom: 22px;
-      width: 108%;
-      max-height: 620px;
+      bottom: 8px;
+      width: 126%;
+      max-height: 720px;
       transform: translateX(-50%);
       object-fit: contain;
       filter: drop-shadow(0 28px 30px rgba(0, 0, 0, .28));
@@ -1407,9 +1411,9 @@
 
 
     @media (max-width: 900px) {
-      .hero-visual.actual-hero { min-height: 520px; }
-      .hero-image-frame { min-height: 500px; width: min(520px, 100%); }
-      .hero-main-img { width: 104%; max-height: 550px; }
+      .hero-visual.actual-hero { min-height: 570px; }
+      .hero-image-frame { min-height: 550px; width: min(560px, 100%); }
+      .hero-main-img { width: 122%; max-height: 620px; }
       .phone-image-stack { min-height: 560px; }
       .phone-shot { width: min(300px, 58%); }
     }
@@ -1417,9 +1421,9 @@
     @media (max-width: 560px) {
       .brand-logo { width: 112px; }
       .hero-banner-copy { width: 100%; margin-top: 22px; }
-      .hero-visual.actual-hero { min-height: 420px; }
-      .hero-image-frame { min-height: 410px; border-radius: 32px; }
-      .hero-main-img { width: 112%; max-height: 450px; bottom: 16px; }
+      .hero-visual.actual-hero { min-height: 470px; }
+      .hero-image-frame { min-height: 450px; border-radius: 0; }
+      .hero-main-img { width: 128%; max-height: 520px; bottom: 4px; }
       .visual-chip { left: 18px; top: 18px; font-size: 12px; }
       .phone-image-stack { min-height: 520px; }
       .phone-shot { width: min(270px, 63%); padding: 7px; border-radius: 34px; }
@@ -1554,6 +1558,8 @@
     }
 
     .countdown-card {
+      position: relative;
+      z-index: 5;
       background: rgba(255, 255, 255, .78);
       border: 1px solid rgba(7,18,37,.1);
       color: #071225;
@@ -2379,8 +2385,129 @@
       transform: translate3d(0, 0, 0);
     }
 
+    .scroll-reveal.is-resetting {
+      transition: none !important;
+      transition-delay: 0ms !important;
+    }
+
+    /* Outer rows keep straight separators; cards inside may be rounded. */
+    .benefit-summary,
+    .app-mock-section,
+    .interactive-card,
+    .product-flow-section,
+    .stage-section.victory-stage,
+    .schedule-section,
+    .final-cta,
+    .notice {
+      border-top: 1px solid rgba(7, 18, 37, .12) !important;
+      border-bottom: 1px solid rgba(7, 18, 37, .12) !important;
+    }
+
+    .interactive-card + .interactive-card {
+      border-top: 0 !important;
+    }
+
+    .benefit-summary,
+    .interactive-card .field-grid,
+    .interactive-card .calc-result,
+    .cheer-options,
+    .flow-chant-list {
+      gap: 14px;
+    }
+
+    .benefit-summary {
+      padding: 18px 0;
+    }
+
+    .benefit-card,
+    .step-card,
+    .field,
+    .result-line,
+    .cheer-option,
+    .selected-cheer,
+    .coupon-result,
+    .flow-price-tag,
+    .flow-chant-list li,
+    .victory-coupon-board,
+    .victory-coupon-inner,
+    .schedule-table-wrap,
+    .countdown-card,
+    .time-box,
+    .phone-caption {
+      border: 1px solid rgba(7, 18, 37, .1) !important;
+      border-radius: 20px !important;
+    }
+
+    .benefit-card,
+    .step-card,
+    .field,
+    .result-line,
+    .cheer-option,
+    .selected-cheer,
+    .flow-chant-list li {
+      background: rgba(255, 255, 255, .76) !important;
+    }
+
+    .benefit-card + .benefit-card,
+    .flow-chant-list li,
+    .cheer-option {
+      border-left: 1px solid rgba(7, 18, 37, .1) !important;
+      border-right: 1px solid rgba(7, 18, 37, .1) !important;
+    }
+
+    .interactive-card .field-grid,
+    .interactive-card .calc-result,
+    .cheer-options,
+    .flow-chant-list {
+      padding: 14px 0;
+    }
+
+    .step-card {
+      padding: 22px !important;
+    }
+
+    .field input,
+    .field select {
+      border: 1px solid rgba(7, 18, 37, .12) !important;
+      border-radius: 12px !important;
+    }
+
+    .victory-coupon-board,
+    .schedule-table-wrap {
+      overflow: hidden;
+    }
+
+    .phone-image-stack {
+      overflow: hidden;
+    }
+
+    .phone-caption.scroll-reveal {
+      transform: translate3d(-50%, 26px, 0);
+    }
+
+    .phone-caption.scroll-reveal.is-visible {
+      transform: translate3d(-50%, 0, 0);
+    }
+
+    .phone-shot.cart.scroll-reveal {
+      transform: translate3d(0, 26px, 0) rotate(-3deg);
+    }
+
+    .phone-shot.cart.scroll-reveal.is-visible {
+      transform: translate3d(0, 0, 0) rotate(-3deg);
+    }
+
+    .phone-shot.date.scroll-reveal {
+      transform: translate3d(0, 26px, 0) rotate(3deg);
+    }
+
+    .phone-shot.date.scroll-reveal.is-visible {
+      transform: translate3d(0, 0, 0) rotate(3deg);
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .scroll-reveal {
+      .scroll-reveal,
+      .scroll-reveal.is-resetting {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
@@ -2402,8 +2529,8 @@
       .result-line,
       .cheer-option,
       .flow-chant-list li {
-        border-left: 0 !important;
-        border-right: 0 !important;
+        border-left: 1px solid rgba(7,18,37,.1) !important;
+        border-right: 1px solid rgba(7,18,37,.1) !important;
         border-bottom: 1px solid rgba(7,18,37,.1) !important;
       }
 
@@ -2412,7 +2539,7 @@
       .result-line:last-child,
       .cheer-option:last-child,
       .flow-chant-list li:last-child {
-        border-bottom: 0 !important;
+        border-bottom: 1px solid rgba(7,18,37,.1) !important;
       }
 
       .app-mock-section,
@@ -2423,275 +2550,6 @@
       .final-cta,
       .notice {
         padding: 44px 0;
-      }
-    }
-
-
-
-    /* v9: 카드형 둥근 사각형 완전 제거 + GitHub Pages용 스크롤 등장 애니메이션 보강 */
-    :root {
-      --flow-line-strong: rgba(7, 18, 37, .14);
-      --flow-line-soft: rgba(7, 18, 37, .08);
-      --flow-bg: #f7fbff;
-      --flow-bg-alt: #ffffff;
-    }
-
-    /* 기존 v8 reveal이 실패해도 화면을 가리지 않도록 초기화 */
-    .scroll-reveal,
-    .scroll-reveal.is-visible {
-      opacity: 1 !important;
-      transform: none !important;
-      transition: none !important;
-    }
-
-    /* 큰 박스/카드/프레임의 둥근 모서리와 사각 테두리 제거 */
-    .benefit-card,
-    .app-mock-section,
-    .interactive-card,
-    .product-flow-section,
-    .stage-section,
-    .stage-section.victory-stage,
-    .schedule-section,
-    .final-cta,
-    .notice,
-    .countdown-card,
-    .time-box,
-    .hero-image-frame,
-    .phone-image-stack,
-    .phone-shot,
-    .phone-caption,
-    .step-card,
-    .field,
-    .field input,
-    .field select,
-    .result-line,
-    .game-area,
-    .cheer-option,
-    .selected-cheer,
-    .coupon-result,
-    .coupon-code,
-    .flow-price-tag,
-    .flow-chant-list,
-    .flow-chant-list li,
-    .victory-coupon-board,
-    .victory-coupon-inner,
-    .schedule-table-wrap,
-    .schedule-table,
-    .schedule-table th,
-    .schedule-table td {
-      border-radius: 0 !important;
-      box-shadow: none !important;
-    }
-
-    /* 영역은 보존하되, 박스처럼 보이는 외곽선은 제거 */
-    .app-mock-section,
-    .interactive-card,
-    .product-flow-section,
-    .stage-section.victory-stage,
-    .schedule-section,
-    .final-cta,
-    .notice {
-      background: transparent !important;
-      border: 0 !important;
-      border-top: 1px solid var(--flow-line-strong) !important;
-      margin-top: 64px !important;
-      padding: 64px 0 !important;
-    }
-
-    .interactive-card + .interactive-card {
-      margin-top: 0 !important;
-      border-top: 1px solid var(--flow-line-soft) !important;
-    }
-
-    .benefit-summary {
-      background: transparent !important;
-      border-top: 1px solid var(--flow-line-strong) !important;
-      border-bottom: 1px solid var(--flow-line-strong) !important;
-    }
-
-    .benefit-card {
-      background: transparent !important;
-      border: 0 !important;
-    }
-
-    .benefit-card + .benefit-card {
-      border-left: 1px solid var(--flow-line-soft) !important;
-    }
-
-    .steps,
-    .interactive-card .field-grid,
-    .interactive-card .calc-result,
-    .cheer-options,
-    .flow-chant-list {
-      border-top: 1px solid var(--flow-line-soft) !important;
-      border-bottom: 1px solid var(--flow-line-soft) !important;
-    }
-
-    .step-card,
-    .field,
-    .result-line,
-    .cheer-option,
-    .flow-chant-list li {
-      background: transparent !important;
-      border: 0 !important;
-      border-right: 1px solid var(--flow-line-soft) !important;
-    }
-
-    .step-card {
-      border-right: 0 !important;
-      border-bottom: 1px solid var(--flow-line-soft) !important;
-    }
-
-    .step-card:last-child,
-    .field:last-child,
-    .result-line:last-child,
-    .cheer-option:last-child,
-    .flow-chant-list li:last-child {
-      border-right: 0 !important;
-      border-bottom: 0 !important;
-    }
-
-    .step-card:hover,
-    .cheer-option:hover,
-    .cheer-option.is-selected {
-      background: linear-gradient(90deg, rgba(36,245,208,.16), transparent) !important;
-      color: #071225 !important;
-      transform: none !important;
-    }
-
-    .step-card:hover h3,
-    .step-card:hover p,
-    .cheer-option:hover,
-    .cheer-option.is-selected,
-    .cheer-option:hover span,
-    .cheer-option.is-selected span {
-      color: #071225 !important;
-    }
-
-    .countdown-card {
-      background: transparent !important;
-      border: 0 !important;
-      border-top: 1px solid rgba(255,255,255,.5) !important;
-      border-bottom: 1px solid rgba(255,255,255,.5) !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-
-    .time-box {
-      background: rgba(255,255,255,.72) !important;
-      border: 0 !important;
-    }
-
-    .hero-image-frame,
-    .phone-shot,
-    .phone-caption {
-      background: transparent !important;
-      border: 0 !important;
-    }
-
-    .phone-shot img {
-      border-radius: 0 !important;
-      box-shadow: none !important;
-    }
-
-    .product-flow-section {
-      background:
-        radial-gradient(circle at 84% 22%, rgba(255,63,180,.13), transparent 24%),
-        radial-gradient(circle at 6% 18%, rgba(36,245,208,.2), transparent 28%) !important;
-      overflow: visible !important;
-    }
-
-    .flow-price-tag,
-    .selected-cheer,
-    .coupon-result,
-    .coupon-code,
-    .victory-coupon-board,
-    .victory-coupon-inner,
-    .schedule-table-wrap {
-      background: transparent !important;
-      border: 0 !important;
-    }
-
-    .selected-cheer,
-    .coupon-result,
-    .victory-coupon-inner {
-      border-top: 1px solid var(--flow-line-soft) !important;
-      border-bottom: 1px solid var(--flow-line-soft) !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-
-    .victory-coupon-inner {
-      border-top: 4px solid var(--pink) !important;
-    }
-
-    .schedule-table-wrap {
-      overflow-x: auto !important;
-    }
-
-    .schedule-table {
-      background: transparent !important;
-    }
-
-    .schedule-table th {
-      background: rgba(36,245,208,.16) !important;
-      border-bottom: 1px solid var(--flow-line-soft) !important;
-    }
-
-    .schedule-table td {
-      background: transparent !important;
-      border-bottom: 1px solid var(--flow-line-soft) !important;
-    }
-
-    .final-cta {
-      text-align: center !important;
-      background:
-        radial-gradient(circle at 50% 0%, rgba(36,245,208,.2), transparent 40%) !important;
-    }
-
-    /* 새 스크롤 애니메이션: GitHub Pages에서도 즉시 작동하는 방식 */
-    .reveal-ready .reveal-up {
-      opacity: 0;
-      transform: translate3d(0, 34px, 0);
-      transition:
-        opacity .78s cubic-bezier(.2, .8, .2, 1),
-        transform .78s cubic-bezier(.2, .8, .2, 1);
-      transition-delay: var(--reveal-delay, 0ms);
-      will-change: opacity, transform;
-    }
-
-    .reveal-ready .reveal-up.reveal-visible {
-      opacity: 1;
-      transform: translate3d(0, 0, 0);
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .reveal-ready .reveal-up {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .benefit-card + .benefit-card,
-      .field,
-      .result-line,
-      .cheer-option,
-      .flow-chant-list li {
-        border-left: 0 !important;
-        border-right: 0 !important;
-        border-bottom: 1px solid var(--flow-line-soft) !important;
-      }
-
-      .app-mock-section,
-      .interactive-card,
-      .product-flow-section,
-      .stage-section.victory-stage,
-      .schedule-section,
-      .final-cta,
-      .notice {
-        padding: 50px 0 !important;
       }
     }
 
@@ -2817,66 +2675,6 @@
               </figure>
               <div class="phone-caption">앱 장바구니에서 예약 설정 → 경기 날짜 선택하면 끝!</div>
             </div>
-          </section>
-
-          <section class="interactive-zone" id="interactive">
-            <article class="interactive-card" id="calculator">
-              <span class="section-kicker">🧮 할인 가격 계산기</span>
-              <h2>내 피자 할인 가격,<br /><span class="highlight-mint">바로 계산해보기</span></h2>
-              <p class="section-desc">대표 피자 3종을 선택하면 30%/40% 할인 적용 예상 금액을 바로 확인할 수 있어요.</p>
-              <div class="field-grid">
-                <div class="field">
-                  <label for="basePrice">대표 피자 선택</label>
-                  <select id="basePrice">
-                    <option value="27900">포테이토 L · 27,900원</option>
-                    <option value="29900">그릴드 패티 치즈 버거 L · 29,900원</option>
-                    <option value="33900">와일드 와일드 웨스트 스테이크 L · 33,900원</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="pizzaQty">수량</label>
-                  <select id="pizzaQty">
-                    <option value="1">1판</option>
-                    <option value="2">2판</option>
-                  </select>
-                </div>
-                <div class="field">
-                  <label for="discountType">혜택 선택</label>
-                  <select id="discountType">
-                    <option value="0.3">🚚 배달 30% 사전예약</option>
-                    <option value="0.4">🏆 승리 시 포장 40%</option>
-                  </select>
-                </div>
-              </div>
-              <div class="calc-result" aria-live="polite">
-                <div class="result-line"><span>정가 합계</span><strong id="originalPrice">27,900원</strong></div>
-                <div class="result-line"><span>할인 금액</span><strong id="discountPrice">- 8,370원</strong></div>
-                <div class="result-line final"><span>예상 결제금액</span><strong id="finalPrice">19,530원</strong></div>
-              </div>
-              <p class="mini-note">※ 가격은 대표 피자 L 기준 예시이며, 추가 토핑 금액은 제외됩니다. 실제 주문 전 공식 앱 가격을 확인해주세요.</p>
-            </article>
-
-            <article class="interactive-card cheer-card" id="couponGame">
-              <span class="section-kicker">🇰🇷 국가대표 응원하기</span>
-              <h2>응원 메시지 보내고<br /><span class="highlight-pink">앱 전용 30% 쿠폰</span> 받기!</h2>
-              <p class="section-desc">응원 문구를 하나 선택한 뒤 보내기 버튼을 누르면, 도미노 앱에서 사용할 수 있는 배달 30% 할인 쿠폰이 열립니다.</p>
-              <div class="game-area cheer-area">
-                <div class="cheer-options" role="radiogroup" aria-label="응원 문구 선택">
-                  <button class="cheer-option is-selected" type="button" data-cheer="대한민국 파이팅! 피자 먹고 승리 가자!">대한민국 파이팅!<br /><span>피자 먹고 승리 가자!</span></button>
-                  <button class="cheer-option" type="button" data-cheer="오늘 응원 메뉴는 도미노 피자!">오늘 응원 메뉴는<br /><span>도미노 피자!</span></button>
-                  <button class="cheer-option" type="button" data-cheer="골 넣고 피자 먹자! 승리까지 가자!">골 넣고 피자 먹자!<br /><span>승리까지 가자!</span></button>
-                </div>
-                <div class="selected-cheer" id="selectedCheer">대한민국 파이팅! 피자 먹고 승리 가자!</div>
-                <button class="send-cheer" id="sendCheer" type="button">응원 보내고 쿠폰 받기</button>
-                <div class="coupon-result" id="couponResult" aria-live="polite">
-                  <div class="coupon-title">응원 완료! 쿠폰 도착</div>
-                  <p><strong>앱 전용 배달 30% 할인</strong><br />도미노 앱에서 경기 전날 사전예약하고 더 맛있게 응원하세요.</p>
-                  <div class="coupon-code" id="couponCode">DOMINO-WC-30</div>
-                  <button class="copy-coupon" id="copyCoupon" type="button">쿠폰번호 복사하기</button>
-                  <div class="copy-message" id="copyMessage" aria-live="polite"></div>
-                </div>
-              </div>
-            </article>
           </section>
 
           <section class="product-flow-section" id="pizza">
@@ -3012,8 +2810,6 @@
       { label: '6/25 대한민국 경기', date: '2026-06-25T20:00:00+09:00' }
     ];
 
-    const formatWon = (value) => `${Math.max(0, Math.round(value)).toLocaleString('ko-KR')}원`;
-
     function updateCountdown() {
       const now = new Date();
       const next = matchSchedule.find(match => new Date(match.date) > now);
@@ -3042,66 +2838,9 @@
       seconds.textContent = String(s).padStart(2, '0');
     }
 
-    function updateCalculator() {
-      const basePrice = Number(document.getElementById('basePrice').value || 0);
-      const qty = Number(document.getElementById('pizzaQty').value || 1);
-      const rate = Number(document.getElementById('discountType').value || 0);
-      const original = basePrice * qty;
-      const discount = original * rate;
-      const final = original - discount;
-
-      document.getElementById('originalPrice').textContent = formatWon(original);
-      document.getElementById('discountPrice').textContent = `- ${formatWon(discount)}`;
-      document.getElementById('finalPrice').textContent = formatWon(final);
-    }
-
-    function updateSelectedCheer(text) {
-      document.getElementById('selectedCheer').textContent = text;
-    }
-
-    function revealCoupon() {
-      document.getElementById('couponResult').classList.add('is-show');
-      document.getElementById('copyMessage').textContent = '';
-    }
-
     document.addEventListener('DOMContentLoaded', () => {
       updateCountdown();
       setInterval(updateCountdown, 1000);
-
-      ['basePrice', 'pizzaQty', 'discountType'].forEach(id => {
-        document.getElementById(id).addEventListener('input', updateCalculator);
-        document.getElementById(id).addEventListener('change', updateCalculator);
-      });
-      updateCalculator();
-
-      document.querySelectorAll('.cheer-option').forEach(button => {
-        button.addEventListener('click', () => {
-          document.querySelectorAll('.cheer-option').forEach(item => item.classList.remove('is-selected'));
-          button.classList.add('is-selected');
-          updateSelectedCheer(button.dataset.cheer);
-          document.getElementById('couponResult').classList.remove('is-show');
-          document.getElementById('copyMessage').textContent = '';
-        });
-      });
-
-      document.getElementById('sendCheer').addEventListener('click', revealCoupon);
-
-      document.getElementById('copyCoupon').addEventListener('click', async () => {
-        const code = document.getElementById('couponCode').textContent.trim();
-        const message = document.getElementById('copyMessage');
-        try {
-          await navigator.clipboard.writeText(code);
-          message.textContent = '쿠폰번호가 복사됐어요!';
-        } catch (error) {
-          const tempInput = document.createElement('input');
-          tempInput.value = code;
-          document.body.appendChild(tempInput);
-          tempInput.select();
-          document.execCommand('copy');
-          document.body.removeChild(tempInput);
-          message.textContent = '쿠폰번호가 복사됐어요!';
-        }
-      });
     });
   </script>
 
@@ -3112,8 +2851,6 @@
         '.hero-copy-wrap',
         '.benefit-summary',
         '.app-mock-section',
-        '#calculator',
-        '#couponGame',
         '.product-flow-section',
         '.stage-section.victory-stage',
         '.schedule-section',
@@ -3152,8 +2889,13 @@
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
+            entry.target.classList.remove('is-resetting');
+            requestAnimationFrame(() => entry.target.classList.add('is-visible'));
+          } else if (entry.target.classList.contains('is-visible')) {
+            entry.target.classList.add('is-resetting');
+            entry.target.classList.remove('is-visible');
+            void entry.target.offsetWidth;
+            entry.target.classList.remove('is-resetting');
           }
         });
       }, { threshold: 0.16, rootMargin: '0px 0px -8% 0px' });
@@ -3173,106 +2915,6 @@
         });
       });
     });
-  </script>
-
-
-  <script>
-    /* v9 scroll reveal: DOMContentLoaded 타이밍/캐시와 상관없이 작동 */
-    (function () {
-      function initV9Reveal() {
-        const selectors = [
-          '.hero .badge',
-          '.hero-title-image',
-          '.hero-copy',
-          '.hero-actions',
-          '.countdown-card',
-          '.hero-main-img',
-          '.section-black .section-kicker',
-          '.section-black .section-title',
-          '.section-black .section-desc',
-          '.benefit-card',
-          '.step-card',
-          '.phone-shot',
-          '.phone-caption',
-          '#calculator .field',
-          '#calculator .result-line',
-          '#couponGame .cheer-option',
-          '#couponGame .selected-cheer',
-          '#couponGame .send-cheer',
-          '.product-flow-copy > *',
-          '.product-flow-visual',
-          '.stage-section.victory-stage .stage-label',
-          '.stage-section.victory-stage h2',
-          '.stage-section.victory-stage .section-desc',
-          '.stage-section.victory-stage .mini-note',
-          '.victory-coupon-board',
-          '.schedule-table thead',
-          '.schedule-table tbody tr',
-          '.final-cta h2',
-          '.final-cta p',
-          '.final-cta .big-cta',
-          '.notice summary',
-          '.notice li'
-        ];
-
-        const items = Array.from(document.querySelectorAll(selectors.join(',')))
-          .filter((el, index, arr) => arr.indexOf(el) === index && !el.closest('.coupon-result'));
-
-        if (!items.length) return;
-
-        document.documentElement.classList.add('reveal-ready');
-
-        items.forEach((el) => {
-          const parent = el.closest('section, article, .benefit-summary, .hero-copy-wrap, .hero-visual, details') || document.body;
-          const siblings = items.filter(item => {
-            const itemParent = item.closest('section, article, .benefit-summary, .hero-copy-wrap, .hero-visual, details') || document.body;
-            return itemParent === parent;
-          });
-          const order = siblings.indexOf(el);
-          el.classList.add('reveal-up');
-          el.style.setProperty('--reveal-delay', `${Math.min(order * 90, 720)}ms`);
-        });
-
-        const show = (el) => el.classList.add('reveal-visible');
-
-        if ('IntersectionObserver' in window) {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                show(entry.target);
-                observer.unobserve(entry.target);
-              }
-            });
-          }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
-
-          items.forEach((el) => observer.observe(el));
-        } else {
-          const onScroll = () => {
-            const bottom = window.innerHeight * 0.9;
-            items.forEach((el) => {
-              if (!el.classList.contains('reveal-visible') && el.getBoundingClientRect().top < bottom) {
-                show(el);
-              }
-            });
-          };
-          window.addEventListener('scroll', onScroll, { passive: true });
-          window.addEventListener('resize', onScroll);
-          onScroll();
-        }
-
-        requestAnimationFrame(() => {
-          items.forEach((el) => {
-            if (el.getBoundingClientRect().top < window.innerHeight * 0.9) show(el);
-          });
-        });
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initV9Reveal);
-      } else {
-        initV9Reveal();
-      }
-    })();
   </script>
 
 </body>
