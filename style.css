@@ -292,3 +292,168 @@ img { display: block; max-width: 100%; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* Reference poster direction */
+:root { --poster: "Bagel Fat One", "Jua", sans-serif; }
+body { background: #050505; }
+
+.site-header {
+  height: 82px;
+  border-bottom-color: rgba(255,255,255,.32);
+  background: rgba(0, 93, 145, .2);
+  backdrop-filter: blur(8px);
+}
+.brand { padding: 7px 15px; border-radius: 12px; background: white; box-shadow: 0 5px 0 rgba(0,47,74,.25); }
+.brand-logo { width: 150px; height: auto; }
+.header-order { border: 0; color: #07181e; background: white; box-shadow: 0 5px 0 rgba(0,47,74,.25); }
+.header-order:hover, .header-order:focus-visible { color: white; background: #07181e; }
+
+.hero { min-height: 900px; background: var(--blue); }
+.hero-image { object-position: center; }
+.hero-shade {
+  background:
+    linear-gradient(90deg, rgba(35,199,243,.98) 0%, rgba(35,199,243,.91) 26%, rgba(35,199,243,.38) 49%, rgba(0,0,0,.03) 72%),
+    linear-gradient(to bottom, transparent 68%, rgba(0,65,96,.16));
+}
+.hero-inner { display: block; min-height: 850px; padding-top: 135px; }
+.hero-copy { width: min(650px, 52vw); }
+.badge-row { margin-bottom: 18px; }
+.play-badge { position: relative; padding: 10px 15px 9px; color: white; background: #050505; transform: rotate(-2deg); }
+.play-badge::after { position: absolute; bottom: -8px; left: 15px; border-width: 8px 9px 0 0; border-style: solid; border-color: #050505 transparent transparent; content: ""; }
+.online-badge { margin-left: 4px; box-shadow: none; }
+.hero-kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; color: white; font: 29px/1 var(--poster); text-shadow: 0 3px 0 #152832, 2px 0 0 #152832, -2px 0 0 #152832; transform: rotate(-1deg); }
+.hero-kicker span { font-size: 42px; text-shadow: none; animation: ballSpin 12s linear infinite; }
+.hero h1 { line-height: .88; }
+.hero h1 strong { margin: 0; color: #020202; font: clamp(77px, 7vw, 112px)/.94 var(--poster); letter-spacing: -.06em; text-shadow: 3px 4px 0 rgba(255,255,255,.16); }
+.hero h1 em { margin-top: 2px; padding: 0; color: white; background: none; font: clamp(92px, 8.1vw, 130px)/.88 var(--poster); letter-spacing: -.06em; text-shadow: 4px 5px 0 rgba(0,76,111,.27); box-shadow: none; transform: rotate(-1deg); }
+.match-dates { justify-content: center; width: 390px; margin-top: 24px; color: rgba(5,5,5,.55); }
+.match-dates span { font: 21px/1 var(--round); }
+.match-dates b { color: rgba(5,5,5,.35); font-size: 15px; }
+.hero-benefit-pill { width: min(570px, 100%); margin-top: 24px; padding: 18px 34px; border-radius: 999px; color: white; background: #050505; text-align: center; box-shadow: 0 9px 0 rgba(0,83,117,.25); transform: rotate(-.4deg); }
+.hero-benefit-pill p { margin: 0; font: 20px/1.42 var(--round); }
+.hero-benefit-pill em { color: var(--mint); font-style: normal; }
+.hero-benefit-pill strong { color: var(--pink); }
+.hero-actions { margin-top: 31px; }
+.primary-button { border: 3px solid #07181e; background: white; box-shadow: 7px 7px 0 #07181e; }
+.primary-button:hover, .primary-button:focus-visible { box-shadow: 10px 11px 0 #07181e; }
+.text-link { color: #07181e; }
+.hero-ticker { height: 55px; background: #050505; }
+.poster-sparkles i { position: absolute; z-index: -1; width: 3px; height: 75px; background: white; filter: drop-shadow(0 0 10px white); opacity: .75; }
+.poster-sparkles i::after { position: absolute; top: 50%; left: 50%; width: 75px; height: 3px; background: white; content: ""; transform: translate(-50%,-50%); }
+.poster-sparkles i:nth-child(1) { top: 22%; left: 4%; transform: rotate(25deg) scale(.55); }
+.poster-sparkles i:nth-child(2) { top: 13%; left: 48%; transform: rotate(15deg) scale(.4); }
+.poster-sparkles i:nth-child(3) { right: 4%; bottom: 25%; transform: rotate(35deg) scale(.6); }
+.poster-sparkles i:nth-child(4) { right: 38%; bottom: 15%; transform: rotate(15deg) scale(.3); }
+
+.intro-section { padding: 120px 0 95px; background: #050505; }
+.eyebrow { color: var(--mint); }
+.section-heading h2, .detail-content h2, .victory-content h2, .cta-inner h2 { font-family: var(--poster); font-weight: 400; letter-spacing: -.045em; }
+.section-heading h2 { font-size: 62px; }
+.section-heading h2 em { color: white; text-shadow: 4px 4px 0 var(--pink); }
+.section-heading p { font-family: var(--round); }
+.benefit-grid { gap: 30px; }
+.benefit-card {
+  grid-template-columns: minmax(0,1fr) auto;
+  gap: 35px;
+  min-height: 300px;
+  padding: 90px 46px 42px;
+  border: 0;
+  border-radius: 30px;
+  background: linear-gradient(145deg,#3a3a3a,#2b2b2b);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.08), 0 20px 45px rgba(0,0,0,.25);
+}
+.benefit-card::before { top: 24px; right: 28px; left: 28px; height: 42px; border-radius: 999px; background: #050505; }
+.benefit-card__number { position: absolute; z-index: 2; top: 36px; left: 50%; width: auto; height: auto; border: 0; border-radius: 0; color: var(--mint); font: 16px/1 var(--round); transform: translate(-50%,-50%); }
+.benefit-card--pink .benefit-card__number { color: var(--pink); }
+.card-label { color: #d2d2d2 !important; font-size: 17px; }
+.benefit-card h3 { margin-top: 12px; font: 31px/1.1 var(--poster); }
+.benefit-card__copy p { max-width: 330px; color: #b9b9b9; font-size: 14px; }
+.discount-number { align-self: center; color: var(--mint); font: 100px/.85 var(--poster); letter-spacing: -.08em; }
+.benefit-card--pink .discount-number { color: var(--pink); }
+.discount-number sup { font-size: 34px; vertical-align: 40px; }
+
+.detail-section, .victory-section { padding: 95px 0; background: #050505; }
+.poster-panel { padding: 70px; border: 1px solid #484848; border-radius: 36px; background: linear-gradient(145deg,#3a3a3a,#292929); box-shadow: 0 30px 80px rgba(0,0,0,.42); }
+.detail-layout { grid-template-columns: .76fr 1.24fr; gap: 65px; }
+.detail-index { width: 100%; height: 42px; margin-bottom: 28px; border-radius: 999px; background: #050505; }
+.detail-index--mint { color: var(--mint); }
+.detail-index--pink { color: var(--pink); }
+.detail-content { text-align: center; }
+.detail-content h2 { font-size: 45px; line-height: 1.15; }
+.detail-content h2 em { color: var(--mint); }
+.detail-lead { font-family: var(--round); }
+.date-board { border: 0; background: white; box-shadow: 0 7px 0 rgba(0,0,0,.18); }
+.date-board > div { min-height: 57px; border-bottom-color: #e2e2e2; color: #202020; }
+.date-board .date-board__head { color: #777; background: #ededed; }
+.date-board b { color: var(--mint); }
+.tip-box { border: 0; border-radius: 11px; background: #242424; text-align: left; }
+.tip-box b { color: var(--mint); }
+.app-guide { border: 0; border-radius: 25px; background: #4a4a4a; box-shadow: none; }
+.app-guide__header span { color: white; }
+.app-guide__header h3 { font-family: var(--poster); }
+.step-copy b { color: var(--mint); font: 18px/1 var(--round); }
+.step-copy p { color: #e2e2e2; }
+.screen-card--focus { border-color: var(--pink); }
+
+.victory-layout { grid-template-columns: 1.05fr .95fr; gap: 65px; align-items: center; }
+.pizza-panel { min-height: 485px; border: 0; border-radius: 26px; }
+.pizza-panel img { height: 485px; }
+.pizza-caption { bottom: 28px; left: 30px; }
+.deal-stamp { top: 25px; right: 25px; width: 112px; height: 112px; font-family: var(--poster); }
+.victory-content { text-align: center; }
+.victory-dates { margin: 0 0 15px; color: #d2d2d2; font: 16px/1 var(--round); }
+.victory-content h2 { font-size: 46px; line-height: 1.12; }
+.victory-content h2 em { color: var(--pink); }
+.victory-flow { grid-template-columns: repeat(3,1fr); gap: 9px; }
+.victory-flow li { flex-direction: column; gap: 8px; padding: 16px 8px; text-align: center; }
+.victory-flow li > b { color: #050505; background: var(--pink); }
+.price-example { margin-right: auto; margin-left: auto; border-left: 0; border-radius: 999px; background: white; color: #151515; }
+.price-example > span { color: #777; }
+.price-example strong { color: var(--pink); }
+
+.cta-section { padding: 80px 0; background: #050505; }
+.cta-inner { min-height: 240px; border: 0; border-radius: 30px; background: #1f1f1f; }
+.cta-inner h2 { font-size: 55px; }
+.cta-inner h2 em { color: var(--mint); text-shadow: 4px 4px 0 rgba(0,109,139,.55); }
+.cta-button { border-radius: 4px; background: var(--mint); box-shadow: none; }
+.cta-button:hover, .cta-button:focus-visible { box-shadow: 8px 8px 0 var(--pink); }
+.notice-section { border-top: 1px solid #ddd; }
+.site-footer img { width: 125px; height: auto; padding: 5px 9px; border-radius: 5px; background: white; }
+
+@keyframes ballSpin { to { transform: rotate(360deg); } }
+
+@media (max-width: 1100px) {
+  .hero-copy { width: min(650px, 67vw); }
+  .poster-panel { padding: 48px; }
+  .detail-layout, .victory-layout { grid-template-columns: 1fr; }
+  .victory-content { order: -1; }
+}
+
+@media (max-width: 760px) {
+  .brand { padding: 5px 9px; }
+  .brand-logo { width: 112px; }
+  .hero { min-height: auto; }
+  .hero-image { object-position: 64% center; opacity: .55; }
+  .hero-shade { background: linear-gradient(90deg,rgba(35,199,243,.98),rgba(35,199,243,.88) 64%,rgba(35,199,243,.35)); }
+  .hero-inner { padding-top: 105px; }
+  .hero-copy { width: 100%; }
+  .hero-kicker { font-size: 21px; }
+  .hero-kicker span { font-size: 30px; }
+  .hero h1 strong { font-size: 56px; }
+  .hero h1 em { font-size: 72px; }
+  .match-dates { justify-content: flex-start; width: auto; }
+  .hero-benefit-pill { padding: 15px 18px; }
+  .hero-benefit-pill p { font-size: 16px; }
+  .section-heading h2 { font-size: 42px; }
+  .benefit-card { grid-template-columns: 1fr; padding: 85px 28px 32px; }
+  .discount-number { font-size: 78px; }
+  .poster-panel { width: min(100% - 28px,560px); padding: 33px 20px; border-radius: 25px; }
+  .detail-content h2, .victory-content h2 { font-size: 35px; }
+  .app-guide { padding: 26px 15px 31px; }
+  .phone-step { grid-template-columns: 80px minmax(0,220px); }
+  .pizza-panel, .pizza-panel img { min-height: 400px; height: 400px; }
+  .victory-flow { grid-template-columns: 1fr; }
+  .victory-flow li { flex-direction: row; text-align: left; }
+  .price-example { border-radius: 15px; }
+  .cta-inner h2 { font-size: 39px; }
+}
