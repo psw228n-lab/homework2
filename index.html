@@ -956,6 +956,49 @@
       filter: drop-shadow(0 28px 30px rgba(0, 0, 0, .28));
     }
 
+    @media (min-width: 901px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        min-height: 650px;
+      }
+
+      .hero-copy-wrap {
+        width: min(620px, 52%);
+      }
+
+      .hero-visual.actual-hero {
+        position: absolute;
+        top: -58px;
+        right: calc((100vw - 100%) / -2);
+        bottom: -72px;
+        left: 18%;
+        min-height: 0;
+        display: block;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .hero-image-frame {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        min-height: 0;
+      }
+
+      .hero-main-img {
+        left: auto;
+        right: 0;
+        top: auto;
+        bottom: 86px;
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+        transform: none;
+        object-fit: contain;
+        object-position: right bottom;
+      }
+    }
+
     .visual-chip {
       position: absolute;
       z-index: 2;
@@ -1059,7 +1102,7 @@
     /* NEXT MATCH COUNTDOWN */
     .countdown-card {
       margin-top: 24px;
-      width: min(620px, 100%);
+      width: min(500px, 100%);
       padding: 18px;
       border-radius: 26px;
       background: rgba(5, 5, 6, .62);
@@ -1413,7 +1456,7 @@
     @media (max-width: 900px) {
       .hero-visual.actual-hero { min-height: 570px; }
       .hero-image-frame { min-height: 550px; width: min(560px, 100%); }
-      .hero-main-img { width: 122%; max-height: 620px; }
+      .hero-main-img { width: 100%; max-height: 100%; }
       .phone-image-stack { min-height: 560px; }
       .phone-shot { width: min(300px, 58%); }
     }
@@ -1423,7 +1466,7 @@
       .hero-banner-copy { width: 100%; margin-top: 22px; }
       .hero-visual.actual-hero { min-height: 470px; }
       .hero-image-frame { min-height: 450px; border-radius: 0; }
-      .hero-main-img { width: 128%; max-height: 520px; bottom: 4px; }
+      .hero-main-img { width: 100%; max-height: 100%; bottom: 4px; }
       .visual-chip { left: 18px; top: 18px; font-size: 12px; }
       .phone-image-stack { min-height: 520px; }
       .phone-shot { width: min(270px, 63%); padding: 7px; border-radius: 34px; }
@@ -2067,8 +2110,10 @@
     }
 
     .product-flow-visual {
-      display: grid;
-      place-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       min-height: 350px;
     }
 
@@ -2078,6 +2123,30 @@
       display: block;
       filter: drop-shadow(0 24px 28px rgba(7,18,37,.18));
       transform: rotate(2deg);
+    }
+
+    .flow-benefit-label {
+      display: block;
+      margin-bottom: 8px;
+      color: #071225;
+      font-weight: 900;
+    }
+
+    .flow-benefit-copy {
+      display: block;
+      font-weight: 400;
+      line-height: 1.55;
+    }
+
+    .pizza-name {
+      max-width: 520px;
+      margin: 18px auto 0;
+      color: #071225;
+      font-size: clamp(17px, 1.7vw, 22px);
+      line-height: 1.45;
+      font-weight: 950;
+      letter-spacing: -0.04em;
+      text-align: center;
     }
 
     .stage-section.victory-stage {
@@ -2615,24 +2684,76 @@
         <div class="wave-top"></div>
         <div class="container">
           <span class="section-kicker">🔥 월드컵 응원 필수 체크리스트</span>
-          <h2 class="section-title">오직 응원에만 집중하도록<br />도미노가 준비한 역대급 혜택</h2>
+          <h2 class="section-title">오직 응원에만 집중할 수 있도록<br /></h2>
           <p class="section-desc">
-            경기 전날 예약하면 배달 피자가 무조건 30% 할인! 대한민국이 짜릿하게 승리한 날에는 포장 40% 대박 할인 쿠폰까지 쏟아집니다.
+            경기 전날 예약하면 배달 피자가 무조건 30% 할인! <br />승리한 날에는 포장 40% 대박 할인 쿠폰까지 쏟아집니다
           </p>
 
           <div class="benefit-summary">
             <article class="benefit-card" data-stage="30">
               <h3>🚚 [전날 예약] 배달 할인</h3>
               <div class="discount"><span class="num">30</span><span class="unit">%</span></div>
-              <p>6/12, 6/19, 6/25 경기일에 배달받을 피자를 하루 전 도미노 앱으로 예약 주문 시 피자(L) 배달 30% 즉시 할인!</p>
+              <p>경기일에 배달받을 피자를<br /> 하루 전 도미노 앱으로 <br />피자(L) 배달 30% 즉시 할인!</p>
             </article>
 
             <article class="benefit-card" data-stage="40">
               <h3>🏆 [승리 당일] 포장 할인</h3>
               <div class="discount"><span class="num">40</span><span class="unit">%</span></div>
-              <p>대한민국 대표팀 경기 승리 시, 당일 오후 3시부터 피자(M, L) 포장 40% 쿠폰이 지급되고 당일 바로 사용 가능합니다!</p>
+              <p>대한민국 대표팀 경기 승리시<br /> 포장 40% 쿠폰 발행!</p>
             </article>
           </div>
+
+
+
+          <section class="product-flow-section" id="pizza">
+            <div class="product-flow-copy">
+              <span class="section-kicker">🍕 승리를 부르는 맛있는 주문</span>
+              <h2 class="section-title">응원 열기 뜨겁게<br />피자 한 판 크게!</h2>
+              <p class="section-desc">경기 보는 날은 고민하지 말고 피자 한 판! <br />사전예약으로 배달 폭주 걱정을 줄이고, 할인 혜택까지 챙겨보세요.</p>
+              <div class="price-tag flow-price-tag">
+                <span class="rate">30%</span>
+                <span class="label">🚚 사전예약 배달 할인</span>
+              </div>
+              <ul class="chant-list flow-chant-list">
+                <li><span class="flow-benefit-label">혜택 1</span><span class="flow-benefit-copy">사전예약으로 배달 폭주 걱정 없이 안심 수령</span></li>
+                <li><span class="flow-benefit-label">혜택 2</span><span class="flow-benefit-copy">하루 전 예약만 해도 라지 사이즈 30% 즉시 할인</span></li>
+                <li><span class="flow-benefit-label">혜택 3</span><span class="flow-benefit-copy">승리하면 당일 바로 쓰는 포장 40% 쿠폰 증정</span></li>
+              </ul>
+            </div>
+            <div class="product-flow-visual" aria-label="도미노 피자 제품 이미지">
+              <img src="assets/pizza-main.png" alt="치즈 맥스 그릴드 패티 치즈 버거와 더블 미트 할라피뇨 피자" />
+              <p class="pizza-name">치즈 맥스 그릴드 패티 치즈 버거+더블 미트 할라피뇨</p>
+            </div>
+          </section>
+
+
+          <section class="stage-section victory-stage" id="benefit2">
+            <div class="stage-grid">
+              <div>
+                <span class="stage-label">🏆 승리의 기쁨을 배로</span>
+                <h2>대한민국 승리 시<br /><span class="highlight-pink">포장 피자 40%</span> 추가 오픈!</h2>
+                <p class="section-desc">
+                  승리 열기를 그대로 피자파티!<br />
+                  경기 승리시 당일 사용 가능한 쿠폰을 받아보세요.
+                </p>
+                <p class="mini-note">※ 승리 쿠폰은 경기 승리 당일 15:00부터 순차적으로 지급되며, 지급 당일 사용 가능합니다.</p>
+              </div>
+
+              <div class="victory-coupon-board" aria-label="경기 승리 시 포장 40% 쿠폰 안내">
+                <div class="victory-coupon-inner">
+                  <span class="coupon-mini-label">승리 당일 사용 가능</span>
+                  <div class="victory-coupon-main">당일 포장 <strong>40%</strong></div>
+                  <p>대한민국 경기 승리 시<br />15:00부터 순차 지급</p>
+                  <div class="match-chip-row" aria-label="대상 경기일">
+                    <span>6/12</span>
+                    <span>6/19</span>
+                    <span>6/25</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
 
 
 
@@ -2676,57 +2797,6 @@
               <div class="phone-caption">앱 장바구니에서 예약 설정 → 경기 날짜 선택하면 끝!</div>
             </div>
           </section>
-
-          <section class="product-flow-section" id="pizza">
-            <div class="product-flow-copy">
-              <span class="section-kicker">🍕 승리를 부르는 맛있는 주문</span>
-              <h2 class="section-title">응원 열기 올라갈 때,<br />피자 한 판 크게!</h2>
-              <p class="section-desc">경기 보는 날은 고민하지 말고 피자 한 판! 사전예약으로 배달 폭주 걱정을 줄이고, 할인 혜택까지 챙겨보세요.</p>
-              <div class="price-tag flow-price-tag">
-                <span class="rate">30%</span>
-                <span class="label">🚚 사전예약 배달 할인</span>
-              </div>
-              <ul class="chant-list flow-chant-list">
-                <li>사전예약으로 배달 폭주 걱정 없이 안심 수령</li>
-                <li>하루 전 예약만 해도 라지 사이즈 30% 즉시 할인</li>
-                <li>승리하면 당일 바로 쓰는 포장 40% 쿠폰</li>
-              </ul>
-            </div>
-            <div class="product-flow-visual" aria-label="도미노 피자 제품 이미지">
-              <img src="assets/pizza-main.png" alt="도미노 피자 제품 이미지" />
-            </div>
-          </section>
-
-
-          <section class="stage-section victory-stage" id="benefit2">
-            <div class="stage-grid">
-              <div>
-                <span class="stage-label">🏆 승리의 기쁨을 배로</span>
-                <h2>대한민국 승리 시<br /><span class="highlight-pink">포장 피자 40%</span> 추가 오픈!</h2>
-                <p class="section-desc">
-                  승리 열기를 그대로 피자파티!<br />
-                  경기 승리시 당일 사용 가능한 쿠폰을 받아보세요.
-                </p>
-                <p class="mini-note">※ 승리 쿠폰은 경기 승리 당일 15:00부터 순차적으로 지급되며, 지급 당일 사용 가능합니다.</p>
-              </div>
-
-              <div class="victory-coupon-board" aria-label="경기 승리 시 포장 40% 쿠폰 안내">
-                <div class="victory-coupon-inner">
-                  <span class="coupon-mini-label">승리 당일 사용 가능</span>
-                  <div class="victory-coupon-main">당일 포장 <strong>40%</strong></div>
-                  <p>대한민국 경기 승리 시<br />15:00부터 순차 지급</p>
-                  <div class="match-chip-row" aria-label="대상 경기일">
-                    <span>6/12</span>
-                    <span>6/19</span>
-                    <span>6/25</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-
-
 
           <section class="schedule-section" id="schedule">
             <span class="section-kicker">📅 경기 일정 & 쿠폰 스케줄</span>
